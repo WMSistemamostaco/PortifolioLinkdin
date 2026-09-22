@@ -3,238 +3,1231 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Wilian Mostaço | Software Engineer</title>
+  <meta name="description" content="Portfólio de Wilian Mostaço - Engenheiro de Software em Formação & Desenvolvedor Full Stack" />
 
-  <meta name="description" content="Portfólio de Wilian Mostaço, estudante de Engenharia de Software e desenvolvedor Full Stack." />
-
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AOS Animation Library -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="estilos.css">
+  <!-- Particles.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <style>
+    :root {
+      --bg-dark: #060913;
+      --bg-card: rgba(13, 22, 41, 0.65);
+      --bg-card-hover: rgba(20, 35, 65, 0.8);
+      --border-glow: rgba(0, 210, 255, 0.25);
+      --border-glow-hover: rgba(0, 210, 255, 0.6);
+      --primary-cyan: #00d2ff;
+      --primary-blue: #3b82f6;
+      --accent-glow: #00f0ff;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Partículas fixadas cobrindo 100% da viewport */
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    #particles-js canvas {
+      display: block;
+      pointer-events: auto;
+    }
+
+    /* Layout Wrapper */
+    .app-container {
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(6, 9, 19, 0.8);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      z-index: 100;
+      padding: 0.8rem 5%;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-badge {
+      background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
+      color: #000;
+      font-weight: 900;
+      font-size: 1.2rem;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-family: 'Space Grotesk', sans-serif;
+      box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+    }
+
+    .logo-text h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: 0.5px;
+    }
+
+    .logo-text span {
+      font-size: 0.65rem;
+      color: var(--primary-cyan);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .menu {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .menu a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .menu a:hover, .menu a.active {
+      color: var(--primary-cyan);
+    }
+
+    .menu a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary-cyan);
+      transition: width 0.3s ease;
+      box-shadow: 0 0 8px var(--primary-cyan);
+    }
+
+    .menu a:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .btn-outline {
+      border: 1px solid var(--primary-cyan);
+      color: var(--primary-cyan);
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 210, 255, 0.05);
+    }
+
+    .btn-outline:hover {
+      background: var(--primary-cyan);
+      color: #000;
+      box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 6rem 5% 4rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      padding-top: 7rem;
+    }
+
+    .hero-text {
+      max-width: 620px;
+    }
+
+    .greeting {
+      color: var(--primary-cyan);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-text h1 {
+      font-size: 3.8rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      background: linear-gradient(180deg, #ffffff 30%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-text h1 span {
+      background: linear-gradient(90deg, var(--primary-cyan), var(--primary-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-subtitle::before {
+      content: '';
+      width: 12px;
+      height: 2px;
+      background: var(--primary-cyan);
+    }
+
+    .descricao {
+      color: #cbd5e1;
+      line-height: 1.7;
+      font-size: 0.95rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .stack-badges {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--border-glow);
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(5px);
+    }
+
+    .badge i {
+      color: var(--primary-cyan);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
+      color: #000;
+      padding: 0.85rem 1.8rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 30px rgba(0, 210, 255, 0.6);
+    }
+
+    .btn-secondary {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--border-glow);
+      color: var(--text-main);
+      padding: 0.85rem 1.8rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary-cyan);
+      color: var(--primary-cyan);
+      transform: translateY(-3px);
+    }
+
+    /* Hero Photomontage Frame */
+    .hero-image-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .glow-bg {
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(0, 210, 255, 0.25) 0%, rgba(59, 130, 246, 0.1) 50%, transparent 70%);
+      filter: blur(40px);
+      z-index: 1;
+    }
+
+    .profile-card {
+      position: relative;
+      z-index: 2;
+      width: 360px;
+      height: 440px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border-glow-hover);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 210, 255, 0.2);
+      background: var(--bg-card);
+      backdrop-filter: blur(10px);
+    }
+
+    .profile-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: contrast(1.05) brightness(1.02);
+    }
+
+    .quote-overlay {
+      position: absolute;
+      top: 20px;
+      right: -30px;
+      background: rgba(6, 9, 19, 0.85);
+      border: 1px solid var(--border-glow);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      backdrop-filter: blur(12px);
+      z-index: 3;
+      transform: rotate(3deg);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    .quote-overlay p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-cyan);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 1.3;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 2.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-cyan), var(--primary-blue));
+      border-radius: 2px;
+      box-shadow: 0 0 10px var(--primary-cyan);
+    }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .sobre-foto-box {
+      position: relative;
+    }
+
+    .sobre-foto-box img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid var(--border-glow);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+
+    .sobre-content p {
+      color: #cbd5e1;
+      line-height: 1.8;
+      font-size: 0.98rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cards-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      padding: 1.2rem;
+      border-radius: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .info-card:hover {
+      border-color: var(--primary-cyan);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 210, 255, 0.15);
+    }
+
+    .info-icon {
+      background: rgba(0, 210, 255, 0.1);
+      color: var(--primary-cyan);
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .info-text h4 {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .info-text p {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin: 0;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .tech-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      padding: 1.5rem 1rem;
+      border-radius: 12px;
+      text-align: center;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+    }
+
+    .tech-box:hover {
+      border-color: var(--primary-cyan);
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0, 210, 255, 0.2);
+      background: var(--bg-card-hover);
+    }
+
+    .tech-box i {
+      font-size: 2.2rem;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    .tech-box span {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .projetos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: 16px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      border-color: var(--primary-cyan);
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 210, 255, 0.2);
+    }
+
+    .project-card.highlight {
+      grid-column: span 2;
+    }
+
+    .project-thumb {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .project-thumb img {
+      transform: scale(1.05);
+    }
+
+    .featured-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--primary-cyan);
+      color: #000;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
+
+    .project-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .project-body h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+
+    .project-body p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+      flex-grow: 1;
+    }
+
+    .project-techs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-techs span {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      color: var(--primary-cyan);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn-sm {
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-sm-primary {
+      background: var(--primary-cyan);
+      color: #000;
+    }
+
+    .btn-sm-primary:hover {
+      box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+    }
+
+    .btn-sm-ghost {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-sm-ghost:hover {
+      border-color: var(--primary-cyan);
+      color: var(--primary-cyan);
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      position: relative;
+      margin-top: 2rem;
+    }
+
+    .timeline-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      padding: 1.5rem;
+      border-radius: 12px;
+      position: relative;
+      backdrop-filter: blur(10px);
+    }
+
+    .timeline-year {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-cyan);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-item h4 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-item p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Certificates Grid */
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .cert-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      padding: 1.2rem;
+      border-radius: 12px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .cert-card:hover {
+      border-color: var(--primary-cyan);
+      transform: translateY(-4px);
+    }
+
+    .cert-card i {
+      font-size: 2rem;
+      color: var(--primary-cyan);
+      margin-bottom: 0.8rem;
+    }
+
+    .cert-card h4 {
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .cert-card span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    .github-dashboard {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: 16px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+    }
+
+    .stats-boxes {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary-cyan);
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* Footer / Contact */
+    .contact-section {
+      text-align: center;
+      padding: 5rem 5% 3rem;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-contact {
+      padding: 0.8rem 1.8rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    .btn-whatsapp { background: #25D366; color: #000; }
+    .btn-linkedin { background: #0A66C2; color: #fff; }
+    .btn-github { background: #24292e; color: #fff; border: 1px solid rgba(255,255,255,0.1); }
+    .btn-email { background: var(--primary-cyan); color: #000; }
+
+    .btn-contact:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Responsividade */
+    @media (max-width: 992px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 8rem;
+      }
+      .hero-text { max-width: 100%; }
+      .hero-subtitle { justify-content: center; }
+      .stack-badges, .hero-buttons { justify-content: center; }
+      .sobre-grid { grid-template-columns: 1fr; }
+      .project-card.highlight { grid-column: span 1; }
+      .github-dashboard { grid-template-columns: 1fr; }
+      .quote-overlay { right: 0; }
+    }
+
+    @media (max-width: 768px) {
+      .menu { display: none; }
+      .hero-text h1 { font-size: 2.8rem; }
+      .cards-info { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-<div id="particles-js"></div>
+  <!-- Elemento do canvas de partículas mantido fixo no fundo -->
+  <div id="particles-js"></div>
 
-<header>
-  <nav class="navbar">
+  <div class="app-container">
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <div class="logo-badge">WM</div>
+          <div class="logo-text">
+            <h3>WILIAN MOSTAÇO</h3>
+            <span>Software Engineer</span>
+          </div>
+        </div>
 
-    <div class="logo">
-      <span>WM</span>
-      <small>Software Engineer</small>
-    </div>
+        <ul class="menu">
+          <li><a href="#inicio" class="active">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#certificados">Certificados</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
 
-    <ul class="menu">
-      <li><a href="#inicio">Início</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projetos">Projetos</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
+        <div class="nav-actions">
+          <a href="#contato" class="btn-outline"><i class="fa-solid fa-download"></i> Baixar Currículo</a>
+        </div>
+      </nav>
+    </header>
 
-    <a href="#contato" class="btn-menu">Vamos conversar</a>
+    <section id="inicio" class="hero">
+      <div class="hero-text" data-aos="fade-right">
+        <p class="greeting">Olá, eu sou</p>
+        <h1>Wilian <span>Mostaço</span></h1>
+        <div class="hero-subtitle">Engenheiro de Software em formação | Desenvolvedor Full Stack</div>
+        
+        <p class="descricao">
+          Transformando processos e ideias em soluções digitais inteligentes. 
+          Especializado em unir tecnologia, arquitetura de software e inteligência de dados para construir aplicações eficientes e escaláveis.
+        </p>
 
-  </nav>
-</header>
+        <div class="stack-badges">
+          <div class="badge"><i class="fa-brands fa-js"></i> JavaScript</div>
+          <div class="badge"><i class="fa-brands fa-node-js"></i> Node.js</div>
+          <div class="badge"><i class="fa-brands fa-python"></i> Python</div>
+          <div class="badge"><i class="fa-solid fa-database"></i> SQL / MySQL</div>
+        </div>
 
-<section id="inicio" class="hero">
+        <div class="hero-buttons">
+          <a href="#projetos" class="btn-primary"><i class="fa-solid fa-rocket"></i> Ver Projetos</a>
+          <a href="#contato" class="btn-secondary"><i class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+      </div>
 
-  <div class="hero-text" data-aos="fade-right">
+      <div class="hero-image-wrapper" data-aos="fade-left">
+        <div class="glow-bg"></div>
+        
+        <div class="quote-overlay">
+          <p>Código<br>Processo<br>Resultado</p>
+        </div>
 
-    <p class="hello">👋 Olá, eu sou</p>
+        <div class="profile-card">
+          <img src="imagem/Foto Wilian Social.png" alt="Wilian Mostaço" onerror="this.src='https://placehold.co/400x500/0d1629/00d2ff?text=Wilian+Mosta%C3%A7o'">
+        </div>
+      </div>
+    </section>
 
-    <h1>Wilian <span>Mostaço</span></h1>
+    <section id="sobre">
+      <h2 class="section-title" data-aos="fade-up">Sobre Mim</h2>
+      
+      <div class="sobre-grid">
+        <div class="sobre-foto-box" data-aos="zoom-in">
+          <img src="imagem/Foto Wilian Social.png" alt="Wilian Mostaço" onerror="this.src='https://placehold.co/340x420/0d1629/00d2ff?text=Wilian+Mosta%C3%A7o'">
+        </div>
 
-    <h2>Engenheiro de Software em formação • Desenvolvedor Full Stack</h2>
+        <div class="sobre-content" data-aos="fade-up">
+          <p>
+            Sou Wilian Mostaço, estudante de Engenharia de Software e desenvolvedor focado na criação de sistemas web que resolvem problemas reais.
+          </p>
+          <p>
+            Minha experiência em Planejamento e Controle de Produção (PCP) deu-me uma visão prática sobre processos industriais, automação e gestão de dados. Hoje transformo esse conhecimento em aplicações web utilizando JavaScript, Node.js, Python, SQL e Git.
+          </p>
 
-    <p class="descricao">
-      Desenvolvendo sistemas inteligentes que unem tecnologia, produção e inovação.
-      Minha missão é transformar processos em soluções digitais escaláveis.
-    </p>
+          <div class="cards-info">
+            <div class="info-card">
+              <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="info-text">
+                <h4>Localização</h4>
+                <p>Londrina • Paraná</p>
+              </div>
+            </div>
 
-    <div class="stack-badges">
-      <span>JavaScript</span>
-      <span>Node.js</span>
-      <span>Python</span>
-      <span>SQL</span>
-    </div>
+            <div class="info-card">
+              <div class="info-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div class="info-text">
+                <h4>Graduação</h4>
+                <p>Engenharia de Software</p>
+              </div>
+            </div>
 
-    <div class="hero-buttons">
-      <a href="#projetos" class="btn-primary">Ver Projetos</a>
-      <a href="#sobre" class="btn-secondary">Sobre Mim</a>
-    </div>
+            <div class="info-card">
+              <div class="info-icon"><i class="fa-solid fa-briefcase"></i></div>
+              <div class="info-text">
+                <h4>Experiência</h4>
+                <p>PCP + Desenvolvimento</p>
+              </div>
+            </div>
 
+            <div class="info-card">
+              <div class="info-icon"><i class="fa-solid fa-bullseye"></i></div>
+              <div class="info-text">
+                <h4>Objetivo</h4>
+                <p>Desenvolvedor Full Stack</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title" data-aos="fade-up">Stack Tecnológica</h2>
+
+      <div class="skills-grid" data-aos="fade-up">
+        <div class="tech-box"><i class="fa-brands fa-html5" style="color: #e34f26;"></i><span>HTML5</span></div>
+        <div class="tech-box"><i class="fa-brands fa-css3-alt" style="color: #1572b6;"></i><span>CSS3</span></div>
+        <div class="tech-box"><i class="fa-brands fa-js" style="color: #f7df1e;"></i><span>JavaScript</span></div>
+        <div class="tech-box"><i class="fa-brands fa-node-js" style="color: #339933;"></i><span>Node.js</span></div>
+        <div class="tech-box"><i class="fa-brands fa-python" style="color: #3776ab;"></i><span>Python</span></div>
+        <div class="tech-box"><i class="fa-brands fa-git-alt" style="color: #f05032;"></i><span>Git</span></div>
+        <div class="tech-box"><i class="fa-brands fa-github" style="color: #fff;"></i><span>GitHub</span></div>
+        <div class="tech-box"><i class="fa-solid fa-database" style="color: #00758f;"></i><span>MySQL</span></div>
+        <div class="tech-box"><i class="fa-solid fa-server" style="color: #336791;"></i><span>PostgreSQL</span></div>
+        <div class="tech-box"><i class="fa-brands fa-docker" style="color: #2496ed;"></i><span>Docker</span></div>
+        <div class="tech-box"><i class="fa-solid fa-code" style="color: #007acc;"></i><span>VS Code</span></div>
+        <div class="tech-box"><i class="fa-brands fa-figma" style="color: #f24e1e;"></i><span>Figma</span></div>
+        <div class="tech-box"><i class="fa-brands fa-linux" style="color: #fcb040;"></i><span>Linux</span></div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <h2 class="section-title" data-aos="fade-up">Projetos em Destaque</h2>
+
+      <div class="projetos-grid">
+        <!-- Projeto Destaque Principal -->
+        <div class="project-card highlight" data-aos="fade-up">
+          <div class="project-thumb">
+            <span class="featured-tag">Projeto Principal</span>
+            <img src="imagem/Software e Logistica.jpeg" alt="Sistema WM" onerror="this.src='https://placehold.co/600x300/0d1629/00d2ff?text=Sistema+WM'">
+          </div>
+          <div class="project-body">
+            <h3>Sistema WM</h3>
+            <p>Sistema de gestão de produção para confecções. Integração total de PCP, controle de terceiros, fluxo de estoque e relatórios analíticos dinâmicos em um só lugar.</p>
+            <div class="project-techs">
+              <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Node.js</span><span>MySQL</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn-sm btn-sm-primary"><i class="fa-solid fa-eye"></i> Ver Projeto</a>
+              <a href="https://github.com/WMSistemamostaco" target="_blank" class="btn-sm btn-sm-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Outros Projetos -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-thumb">
+            <img src="imagem/API LOGISTICA.jpeg" alt="API Logística" onerror="this.src='https://placehold.co/400x220/0d1629/00d2ff?text=API+Log%C3%ADstica'">
+          </div>
+          <div class="project-body">
+            <h3>API Logística & Apostas</h3>
+            <p>Migração e integração de dados de planilhas complexas para uma aplicação Web responsiva com microsserviços.</p>
+            <div class="project-techs">
+              <span>Node.js</span><span>Express</span><span>JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn-sm btn-sm-primary">Ver Projeto</a>
+              <a href="#" class="btn-sm btn-sm-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-thumb">
+            <img src="imagem/PCP na Industria.jpeg" alt="Dashboard PCP" onerror="this.src='https://placehold.co/400x220/0d1629/00d2ff?text=Dashboard+PCP'">
+          </div>
+          <div class="project-body">
+            <h3>Dashboard PCP</h3>
+            <p>Painel em tempo real para acompanhamento de metas, eficiência de linha de produção e métricas operacionais.</p>
+            <div class="project-techs">
+              <span>Python</span><span>SQL</span><span>Chart.js</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn-sm btn-sm-primary">Ver Projeto</a>
+              <a href="#" class="btn-sm btn-sm-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-thumb">
+            <img src="imagem/Linguagens de Programação.jpeg" alt="Calculadora IMC" onerror="this.src='https://placehold.co/400x220/0d1629/00d2ff?text=Calculadora+IMC'">
+          </div>
+          <div class="project-body">
+            <h3>Calculadora IMC & Utilitários</h3>
+            <p>Aplicação desktop e web para cálculos de saúde e métricas corporais desenvolvida com rotinas Python.</p>
+            <div class="project-techs">
+              <span>Python</span><span>Tkinter</span><span>HTML/CSS</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn-sm btn-sm-primary">Ver Projeto</a>
+              <a href="#" class="btn-sm btn-sm-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title" data-aos="fade-up">Minha Jornada</h2>
+      <div class="timeline" data-aos="fade-up">
+        <div class="timeline-item">
+          <div class="timeline-year">2024</div>
+          <h4>Início da Jornada</h4>
+          <p>Início na graduação em Engenharia de Software e fundamentos em algoritmos.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2025</div>
+          <h4>Primeiros Projetos</h4>
+          <p>Desenvolvimento do ecossistema do Sistema WM e projetos Web Full Stack.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2026</div>
+          <h4>Desenvolvimento Ativo</h4>
+          <p>Aprimoramento de APIs, Banco de Dados, arquitetura em nuvem e novos sistemas.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Objetivo</div>
+          <h4>Atuação Full Stack</h4>
+          <p>Pronto para gerar impacto real em equipas de tecnologia e engenharia de software.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificados">
+      <h2 class="section-title" data-aos="fade-up">Certificados</h2>
+      <div class="certs-grid" data-aos="fade-up">
+        <div class="cert-card">
+          <i class="fa-solid fa-award"></i>
+          <h4>Tecnologia e Inovação</h4>
+          <span>LinkedIn</span>
+          <a href="#" class="btn-sm btn-sm-ghost">Ver certificado</a>
+        </div>
+        <div class="cert-card">
+          <i class="fa-brands fa-google"></i>
+          <h4>Google Cloud</h4>
+          <span>Google</span>
+          <a href="#" class="btn-sm btn-sm-ghost">Ver certificado</a>
+        </div>
+        <div class="cert-card">
+          <i class="fa-brands fa-python"></i>
+          <h4>Python Full Course</h4>
+          <span>Udemy</span>
+          <a href="#" class="btn-sm btn-sm-ghost">Ver certificado</a>
+        </div>
+        <div class="cert-card">
+          <i class="fa-brands fa-js"></i>
+          <h4>JavaScript ES6+</h4>
+          <span>Udemy</span>
+          <a href="#" class="btn-sm btn-sm-ghost">Ver certificado</a>
+        </div>
+        <div class="cert-card">
+          <i class="fa-brands fa-github"></i>
+          <h4>Git e GitHub</h4>
+          <span>DevMedia</span>
+          <a href="#" class="btn-sm btn-sm-ghost">Ver certificado</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="github-dashboard" data-aos="fade-up">
+        <div>
+          <h2 style="font-size: 1.5rem; margin-bottom: 1rem;"><i class="fa-brands fa-github" style="color: var(--primary-cyan);"></i> GitHub em Destaque</h2>
+          <div class="stats-boxes">
+            <div>
+              <div class="stat-num">15+</div>
+              <div class="stat-label">Repositórios</div>
+            </div>
+            <div>
+              <div class="stat-num">300+</div>
+              <div class="stat-label">Commits</div>
+            </div>
+            <div>
+              <div class="stat-num">10+</div>
+              <div class="stat-label">Seguidores</div>
+            </div>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Desenvolvimento diário de código limpo e projetos com foco em automação industrial e sistemas web.</p>
+        </div>
+
+        <div style="background: rgba(0,0,0,0.3); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border-glow);">
+          <span style="background: #eab308; color: #000; font-size: 0.7rem; font-weight: 800; padding: 2px 8px; border-radius: 4px;">Em Desenvolvimento</span>
+          <h4 style="margin: 0.5rem 0; font-size: 1rem;">Roadmap Sistema WM</h4>
+          <ul style="list-style: none; font-size: 0.85rem; color: var(--text-muted); line-height: 1.8;">
+            <li><i class="fa-solid fa-check" style="color: var(--primary-cyan);"></i> Login / Autenticação</li>
+            <li><i class="fa-solid fa-check" style="color: var(--primary-cyan);"></i> Cadastro de Produção</li>
+            <li><i class="fa-solid fa-spinner" style="color: #eab308;"></i> Dashboard PCP</li>
+            <li><i class="fa-regular fa-circle"></i> Relatórios Avançados</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="contact-section">
+      <h2 class="section-title" data-aos="fade-up">Vamos construir algo juntos?</h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;" data-aos="fade-up">
+        Estou disponível para oportunidades como Desenvolvedor de Software, Engenharia de Sistemas e projetos de desenvolvimento web.
+      </p>
+
+      <div class="contact-buttons" data-aos="fade-up">
+        <a href="https://wa.me/5543999999999" target="_blank" class="btn-contact btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://linkedin.com/in/wilianmostaco" target="_blank" class="btn-contact btn-linkedin"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/WMSistemamostaco" target="_blank" class="btn-contact btn-github"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a href="mailto:wilianmostaco@gmail.com" class="btn-contact btn-email"><i class="fa-solid fa-envelope"></i> Email</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Wilian Mostaço • WM Portfolio 3.0 • Todos os direitos reservados.</p>
+    </footer>
   </div>
 
-  <div class="hero-image" data-aos="fade-left">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Inicialização da biblioteca de animações
+    AOS.init({
+      duration: 800,
+      once: true
+    });
 
-    <div class="foto-glow"></div>
-
-    <img src="imagem/Foto Wilian Social.png" alt="Wilian Mostaço">
-
-  </div>
-
-</section>
-
-<section id="sobre" class="sobre">
-
-<div class="sobre-imagem" data-aos="zoom-in">
-
-<img src="imagem/Foto Wilian Social.png" alt="Wilian Mostaço">
-
-</div>
-
-<div class="sobre-texto" data-aos="fade-up">
-
-<h2>Sobre Mim</h2>
-
-<p>
-Sou estudante de Engenharia de Software e apaixonado por construir sistemas que resolvem problemas reais.
-Minha experiência em Planejamento e Controle de Produção (PCP) me proporcionou uma visão prática da indústria,
-e hoje transformo esse conhecimento em aplicações web modernas.
-</p>
-
-<div class="cards-sobre">
-
-<div class="card-sobre">
-<h3>📍 Londrina - PR</h3>
-<p>Brasil</p>
-</div>
-
-<div class="card-sobre">
-<h3>🎓 Engenharia de Software</h3>
-<p>Graduação em andamento.</p>
-</div>
-
-<div class="card-sobre">
-<h3>💻 Full Stack</h3>
-<p>HTML, CSS, JavaScript, Node.js, Python e SQL.</p>
-</div>
-
-<div class="card-sobre">
-<h3>🚀 Sistema WM</h3>
-<p>Sistema Web de Gestão para Confecções.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="skills" class="skills">
-
-<h2 data-aos="fade-up">Stack Tecnológica</h2>
-
-<div class="skills-grid">
-
-<div class="skill-card">HTML5</div>
-<div class="skill-card">CSS3</div>
-<div class="skill-card">JavaScript</div>
-<div class="skill-card">Node.js</div>
-<div class="skill-card">Python</div>
-<div class="skill-card">Git</div>
-<div class="skill-card">GitHub</div>
-<div class="skill-card">MySQL</div>
-<div class="skill-card">VS Code</div>
-<div class="skill-card">Figma</div>
-<div class="skill-card">Linux</div>
-<div class="skill-card">Docker</div>
-
-</div>
-
-</section>
-
-<section id="projetos" class="projetos">
-
-<h2 data-aos="fade-up">Projetos em Destaque</h2>
-
-<div class="projetos-grid">
-
-<div class="projeto destaque">
-
-<img src="imagem/Software e Logistica.jpeg" alt="Sistema WM">
-
-<h3>Sistema WM</h3>
-
-<p>
-Sistema Web para gerenciamento de produção, PCP, terceiros e indicadores de confecções.
-</p>
-
-<a href="#">Ver Projeto →</a>
-
-</div>
-
-<div class="projeto">
-<img src="imagem/API LOGISTICA.jpeg" alt="API Logística">
-<h3>API Logística</h3>
-<p>Integração entre processos logísticos e aplicações web.</p>
-</div>
-
-<div class="projeto">
-<img src="imagem/PCP na Industria.jpeg" alt="Dashboard PCP">
-<h3>Dashboard PCP</h3>
-<p>Painel para controle de produção e indicadores.</p>
-</div>
-
-<div class="projeto">
-<img src="imagem/Linguagens de Programação.jpeg" alt="Calculadora IMC">
-<h3>Calculadora IMC</h3>
-<p>Projeto desenvolvido em Python.</p>
-</div>
-
-<div class="projeto">
-<img src="imagem/TI.jpeg" alt="Sistema de Apostas">
-<h3>Sistema de Apostas</h3>
-<p>Migração de planilhas Excel para aplicação Web.</p>
-</div>
-
-<div class="projeto">
-<img src="imagem/microsftware.jpeg" alt="Microsoft Clone">
-<h3>Microsoft Clone</h3>
-<p>Projeto Front-End inspirado na página oficial da Microsoft.</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="contato" id="contato">
-
-<h2>Vamos construir algo juntos?</h2>
-
-<p>
-Estou disponível para oportunidades como Desenvolvedor de Software e projetos de desenvolvimento web.
-</p>
-
-<div class="botoes-contato">
-<a href="https://github.com/WMSistemamostaco" target="_blank">GitHub</a>
-<a href="#">LinkedIn</a>
-<a href="#">WhatsApp</a>
-</div>
-
-</section>
-
-<footer>
-
-<p>© 2026 Wilian Mostaço — WM Portfolio 3.0</p>
-
-</footer>
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="script.js"></script>
-
-<script>
-AOS.init({
-  duration: 1000,
-  once: true
-});
-</script>
-
+    // Configuração das Partículas Interativas em Tela Cheia
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 90,
+          "density": {
+            "enable": true,
+            "value_area": 900
+          }
+        },
+        "color": {
+          "value": "#00d2ff"
+        },
+        "shape": {
+          "type": "circle"
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": false
+        },
+        "size": {
+          "value": 3,
+          "random": true
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 140,
+          "color": "#00d2ff",
+          "opacity": 0.35,
+          "width": 1.2
+        },
+        "move": {
+          "enable": true,
+          "speed": 1.8,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse" // Efeito de se afastar do cursor do rato
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "repulse": {
+            "distance": 120,
+            "duration": 0.4
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
 </body>
 </html>
