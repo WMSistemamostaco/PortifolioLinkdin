@@ -1,1074 +1,198 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Wilian Mostaço - Desenvolvedor Full Stack & Engenheiro de Software em Formação. Especialista em PCP, Logística e Tecnologia da Informação.">
-    <meta name="keywords" content="Wilian Mostaço, Desenvolvedor Full Stack, Engenharia de Software, PCP, Logística, TI, Programação">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <title>Wilian Mostaço | Desenvolvedor Full Stack & Engenheiro de Software</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wilian Mostaço | Software Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
-
 <body>
-    <!-- Partículas de fundo -->
-    <div class="particulas"></div>
 
-    <!-- Navegação -->
-    <nav class="navegacao">
-        <div class="nav-container">
-            <div class="logo">
-                <span>WM</span>
-            </div>
-            <ul class="menu">
-                <li><a href="#inicio" class="menu-link">Início</a></li>
-                <li><a href="#sobre" class="menu-link">Sobre</a></li>
-                <li><a href="#projetos" class="menu-link">Projetos</a></li>
-                <li><a href="#habilidades" class="menu-link">Habilidades</a></li>
-                <li><a href="#experiencia" class="menu-link">Experiência</a></li>
-                <li><a href="#blog" class="menu-link">Blog</a></li>
-                <li><a href="#contato" class="menu-link">Contato</a></li>
-            </ul>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+<div id="particles-js"></div>
+
+<header>
+    <nav>
+        <h2 class="logo">WM<span>.</span></h2>
+
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+
+        <a href="#" class="btn-nav">Currículo</a>
     </nav>
+</header>
 
-    <!-- Seção Inicial -->
-    <main id="inicio" class="cabecalho">
-        <div class="cabecalho-container">
-            <div class="cabecalho-conteudo">
-                <img src="img/Foto Wilian.jpg" alt="Foto de Wilian Mostaço" class="foto-perfil">
-                <h1 class="nome-principal">Wilian Mostaço</h1>
-                <p class="cabecalho-sub-titulo">Desenvolvedor Full Stack & Engenheiro de Software em Formação</p>
-                <p class="cabecalho-descricao">
-                    Transformando experiência em PCP e Logística em soluções tecnológicas inovadoras
-                </p>
-                <div class="cabecalho-botoes">
-                    <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
-                    <a href="#sobre" class="btn btn-secondary">Sobre Mim</a>
-                </div>
-                <div class="redes-sociais">
-                    <a href="https://www.linkedin.com/in/wilian-mosta%C3%A7o-3a504a222/" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/WMSistemamostaco" target="_blank" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="mailto:mostacowilian28@gmail.com" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
+<section class="hero" id="inicio">
+
+<div class="hero-text" data-aos="fade-right">
+
+    <p>👋 Olá, eu sou</p>
+
+    <h1>Wilian <span>Mostaço</span></h1>
+
+    <h3>Engenheiro de Software em formação • Desenvolvedor Full Stack</h3>
+
+    <p class="descricao">
+        Transformando processos de produção em soluções digitais.
+        Desenvolvendo sistemas web inteligentes com JavaScript, Node.js, Python e SQL.
+    </p>
+
+    <div class="badges">
+        <span>JavaScript</span>
+        <span>Node.js</span>
+        <span>Python</span>
+        <span>SQL</span>
+    </div>
+
+    <div class="buttons">
+        <a href="#projetos" class="btn-primary">Ver Projetos</a>
+        <a href="#contato" class="btn-secondary">Contato</a>
+    </div>
+
+</div>
+
+<div class="hero-image" data-aos="fade-left">
+
+    <div class="glow"></div>
+
+    <img src="assets/img/foto-perfil.png" alt="Wilian Mostaço">
+
+</div>
+
+</section>
+
+<section class="sobre" id="sobre">
+
+    <div class="foto-sobre" data-aos="zoom-in">
+        <img src="assets/img/foto-social.jpg" alt="Wilian Social">
+    </div>
+
+    <div class="texto-sobre" data-aos="fade-up">
+
+        <h2>Sobre Mim</h2>
+
+        <p>
+            Sou estudante de Engenharia de Software e apaixonado por desenvolver sistemas que resolvem problemas reais.
+            Minha experiência com Planejamento e Controle de Produção (PCP) me trouxe uma visão prática de processos industriais.
+        </p>
+
+        <div class="cards-info">
+
+            <div class="card-info">
+                📍
+                <h4>Londrina - PR</h4>
+                <p>Brasil</p>
             </div>
+
+            <div class="card-info">
+                💻
+                <h4>Full Stack</h4>
+                <p>JavaScript • Node • Python</p>
+            </div>
+
+            <div class="card-info">
+                🚀
+                <h4>Sistema WM</h4>
+                <p>ERP para Confecções</p>
+            </div>
+
+            <div class="card-info">
+                🎓
+                <h4>Engenharia de Software</h4>
+                <p>Graduação em andamento.</p>
+            </div>
+
         </div>
-    </main>
 
-    <!-- Seção Sobre -->
-    <section id="sobre" class="sessao">
-        <div class="container">
-            <h2 class="titulo-secao">Sobre Mim</h2>
-            <div class="sobre-container">
-                <div class="sobre-texto">
-                    <div class="sobre-paragrafo">
-                        <h3>Minha Jornada Única</h3>
-                        <p>
-                            Olá! Sou Wilian Mostaço, um desenvolvedor Full Stack em formação com uma trajetória profissional única que combina experiência sólida em PCP (Planejamento e Controle de Produção ) e Logística com paixão crescente por Engenharia de Software.
-                        </p>
-                        <p>
-                            Atualmente cursando Engenharia de Software na UNOPAR e atuando como Analista de Infraestrutura de TI na Via Gráfit Jeans, trago uma perspectiva diferenciada para o desenvolvimento de software: a capacidade de entender processos, otimizar fluxos de trabalho e aplicar metodologias organizacionais que aprendi ao longo de mais de 5 anos de experiência em áreas operacionais.
-                        </p>
-                    </div>
-                    
-                    <div class="sobre-paragrafo">
-                        <h3>Paixão por Tecnologia</h3>
-                        <p>
-                            Minha transição para a área de tecnologia não foi apenas uma mudança de carreira, mas uma evolução natural. As habilidades que desenvolvi em mapeamento de processos, análise de dados, resolução de problemas e otimização de sistemas se traduzem perfeitamente para o mundo do desenvolvimento de software.
-                        </p>
-                        <p>
-                            Recentemente, obtive a certificação "Desenvolver um agente de IA com o Serviço do Agente de IA do Azure", demonstrando meu interesse em tecnologias emergentes e meu compromisso com o aprendizado contínuo.
-                        </p>
-                    </div>
+    </div>
 
-                    <div class="sobre-paragrafo">
-                        <h3>Valores e Abordagem</h3>
-                        <p>
-                            Acredito que código limpo e design moderno devem andar juntos para criar experiências web que não apenas funcionam perfeitamente, mas também impressionam visualmente. Minha experiência em processos me ensinou a importância da organização, documentação e metodologias estruturadas - princípios que aplico rigorosamente em todos os meus projetos de desenvolvimento.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="sobre-stats">
-                    <div class="stat-item">
-                        <span class="stat-numero">5+</span>
-                        <span class="stat-label">Anos de Experiência</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-numero">3</span>
-                        <span class="stat-label">Áreas de Atuação</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-numero">1</span>
-                        <span class="stat-label">Certificação Azure</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-numero">100%</span>
-                        <span class="stat-label">Dedicação</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+</section>
 
-    <!-- Seção Projetos -->
-    <section id="projetos" class="projetos">
-        <div class="container">
-            <h2 class="titulo-secao">Meus Projetos</h2>
-            <p class="subtitulo-secao">Explorando diferentes tecnologias e aplicando conceitos de Engenharia de Software</p>
-            
-            <div class="projetos-filtros">
-                <button class="filtro-btn active" data-filter="todos">Todos</button>
-                <button class="filtro-btn" data-filter="web">Desenvolvimento Web</button>
-                <button class="filtro-btn" data-filter="backend">Backend/API</button>
-                <button class="filtro-btn" data-filter="automacao">Automação</button>
-            </div>
+<section class="skills" id="skills">
 
-            <div class="projetos-grid">
-                <!-- Projeto 3: Microsoft Clone -->
-                <div class="projeto-card microsoft-project-card" data-categoria="web">
-                    <div class="projeto-imagem">
-                        <img src="img/microsftware.jpeg" alt="Projeto Microsoft" class="projetos-imagem">
-                        <div class="projeto-overlay">
-                            <div class="projeto-links">
-                                <a href="https://developer.microsoft.com/en-us/" class="projeto-link" target="_blank" aria-label="Ver projeto">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="projeto-conteudo">
-                        <h3 class="projeto-titulo">Microsoft Homepage Clone</h3>
-                        <p class="projeto-descricao">
-                            Recriação da página da Microsoft para demonstrar conhecimentos em diversas tecnologias e fidelidade ao design original.
-                        </p>
-                        <div class="projeto-tecnologias">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Grid Layout</span>
-                        </div>
-                        <div class="projeto-detalhes">
-                            <strong>Desafios:</strong> Reprodução fiel do layout, implementação de componentes complexos, otimização cross-browser.
-                        </div>
-                    </div>
-                </div>
+<h2 data-aos="fade-up">Stack Tecnológica</h2>
 
-                <!-- Projeto 4: Sistema PCP (Futuro ) -->
-                <div class="projeto-card" data-categoria="backend automacao">
-                    <div class="projeto-imagem">
-                        <img src="img/PCP na Industria.jpeg" alt="Projeto Microsoft" class="projetos-imagem">
-                        <div class="projeto-overlay">
-                            <div class="projeto-links">
-                                <a href="https://www.microsoft.com/pt-br/power-platform/products/power-automate/topics/business-process/business-process-management-bpm" class="projeto-link" target="_blank" aria-label="Ver projeto">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                </a>
-                            </div>
-                        </div>                        
-                    </div>
-                    <div class="projeto-conteudo">
-                        <h3 class="projeto-titulo">Sistema de PCP Automatizado</h3>
-                        <p class="projeto-descricao">
-                            Sistema web para automatização de processos de Planejamento e Controle de Produção, aplicando minha experiência prática na área.
-                        </p>
-                        <div class="projeto-tecnologias">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Flask</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">REST API</span>
-                        </div>
-                        <div class="projeto-detalhes">
-                            <strong>Status:</strong> Em desenvolvimento - Aplicando conhecimentos de Engenharia de Software.
-                        </div>
-                    </div>
-                </div>
+<div class="grid-skills">
 
-                <!-- Projeto 5: API RESTful (Futuro) -->
-                <div class="projeto-card" data-categoria="backend">
-                    <div class="projeto-imagem">
-                        <img src="img/API LOGISTICA.jpeg" alt="Projeto Microsoft" class="projetos-imagem">
-                        <div class="projeto-overlay">
-                            <div class="projeto-links">
-                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7343057441279959040/" class="projeto-link" target="_blank" aria-label="Ver projeto">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                </a>
-                            </div>
-                        </div>                        
-                    </div>
-                    <div class="projeto-conteudo">
-                        <h3 class="projeto-titulo">API de Gestão Logística</h3>
-                        <p class="projeto-descricao">
-                            API RESTful para gestão de processos logísticos com autenticação, documentação completa e testes automatizados.
-                        </p>
-                        <div class="projeto-tecnologias">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">JWT Auth</span>
-                        </div>
-                        <div class="projeto-detalhes">
-                            <strong>Status:</strong> Planejado - Foco em Clean Architecture e TDD.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="skill">HTML5</div>
+<div class="skill">CSS3</div>
+<div class="skill">JavaScript</div>
+<div class="skill">Node.js</div>
+<div class="skill">Python</div>
+<div class="skill">Git</div>
+<div class="skill">GitHub</div>
+<div class="skill">SQL</div>
+<div class="skill">VS Code</div>
 
+</div>
 
-    <!-- Seção Habilidades -->
-    <section id="habilidades" class="habilidades">
-        <div class="container">
-            <h2 class="titulo-secao">Habilidades</h2>
-            <p class="subtitulo-secao">Combinando experiência operacional com conhecimentos técnicos em desenvolvimento</p>
-            
-            <div class="habilidades-container">
-                <!-- Habilidades Técnicas -->
-                <div class="habilidades-categoria">
-                    <h3 class="categoria-titulo">
-                        <i class="fas fa-code"></i>
-                        Tecnologias & Linguagens
-                    </h3>
-                    <div class="habilidades-grid">
-                        <div class="habilidade-item">
-                            <div class="habilidade-icone">
-                                <i class="fab fa-html5"></i>
-                            </div>
-                            <span class="habilidade-nome">HTML5</span>
-                            <div class="habilidade-nivel">
-                                <div class="nivel-barra" data-nivel="90"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="habilidade-item">
-                            <div class="habilidade-icone">
-                                <i class="fab fa-css3-alt"></i>
-                            </div>
-                            <span class="habilidade-nome">CSS3</span>
-                            <div class="habilidade-nivel">
-                                <div class="nivel-barra" data-nivel="85"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="habilidade-item">
-                            <div class="habilidade-icone">
-                                <i class="fab fa-js-square"></i>
-                            </div>
-                            <span class="habilidade-nome">JavaScript</span>
-                            <div class="habilidade-nivel">
-                                <div class="nivel-barra" data-nivel="75"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="habilidade-item">
-                            <div class="habilidade-icone">
-                                <i class="fab fa-python"></i>
-                            </div>
-                            <span class="habilidade-nome">Python</span>
-                            <div class="habilidade-nivel">
-                                <div class="nivel-barra" data-nivel="70"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="habilidade-item">
-                            <div class="habilidade-icone">
-                                <i class="fas fa-database"></i>
-                            </div>
-                            <span class="habilidade-nome">SQL</span>
-                            <div class="habilidade-nivel">
-                                <div class="nivel-barra" data-nivel="65"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="habilidade-item">
-                            <div class="habilidade-icone">
-                                <i class="fab fa-git-alt"></i>
-                            </div>
-                            <span class="habilidade-nome">Git</span>
-                            <div class="habilidade-nivel">
-                                <div class="nivel-barra" data-nivel="80"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+</section>
 
-                <!-- Frameworks & Ferramentas -->
-                <div class="habilidades-categoria">
-                    <h3 class="categoria-titulo">
-                        <i class="fas fa-tools"></i>
-                        Frameworks & Ferramentas
-                    </h3>
-                    <div class="ferramentas-grid">
-                        <div class="ferramenta-tag">Flask</div>
-                        <div class="ferramenta-tag">FastAPI</div>
-                        <div class="ferramenta-tag">React</div>
-                        <div class="ferramenta-tag">Bootstrap</div>
-                        <div class="ferramenta-tag">VS Code</div>
-                        <div class="ferramenta-tag">GitHub</div>
-                        <div class="ferramenta-tag">Azure</div>
-                        <div class="ferramenta-tag">Docker</div>
-                        <div class="ferramenta-tag">PostgreSQL</div>
-                        <div class="ferramenta-tag">MongoDB</div>
-                    </div>
-                </div>
+<section class="projetos" id="projetos">
 
-                <!-- Habilidades Interpessoais -->
-                <div class="habilidades-categoria">
-                    <h3 class="categoria-titulo">
-                        <i class="fas fa-users"></i>
-                        Habilidades Interpessoais
-                    </h3>
-                    <div class="soft-skills">
-                        <div class="soft-skill-item">
-                            <i class="fas fa-lightbulb"></i>
-                            <span>Resolução de Problemas</span>
-                        </div>
-                        <div class="soft-skill-item">
-                            <i class="fas fa-comments"></i>
-                            <span>Comunicação</span>
-                        </div>
-                        <div class="soft-skill-item">
-                            <i class="fas fa-handshake"></i>
-                            <span>Trabalho em Equipe</span>
-                        </div>
-                        <div class="soft-skill-item">
-                            <i class="fas fa-rocket"></i>
-                            <span>Proatividade</span>
-                        </div>
-                        <div class="soft-skill-item">
-                            <i class="fas fa-tasks"></i>
-                            <span>Organização</span>
-                        </div>
-                        <div class="soft-skill-item">
-                            <i class="fas fa-brain"></i>
-                            <span>Pensamento Crítico</span>
-                        </div>
-                    </div>
-                </div>
+<h2 data-aos="fade-up">Projetos em Destaque</h2>
 
-                <!-- Metodologias -->
-                <div class="habilidades-categoria">
-                    <h3 class="categoria-titulo">
-                        <i class="fas fa-project-diagram"></i>
-                        Metodologias & Conceitos
-                    </h3>
-                    <div class="metodologias-grid">
-                        <div class="metodologia-item">
-                            <h4>Agile/Scrum</h4>
-                            <p>Experiência em metodologias ágeis aplicadas tanto em PCP quanto em desenvolvimento</p>
-                        </div>
-                        <div class="metodologia-item">
-                            <h4>Clean Code</h4>
-                            <p>Princípios de código limpo, legível e manutenível</p>
-                        </div>
-                        <div class="metodologia-item">
-                            <h4>TDD</h4>
-                            <p>Test-Driven Development para garantir qualidade do software</p>
-                        </div>
-                        <div class="metodologia-item">
-                            <h4>CI/CD</h4>
-                            <p>Integração e entrega contínua para automação de processos</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="cards-projetos">
 
-    <!-- Seção Experiência -->
-    <section id="experiencia" class="experiencia">
-        <div class="container">
-            <h2 class="titulo-secao">Experiência Profissional</h2>
-            <p class="subtitulo-secao">Uma jornada de crescimento contínuo e aplicação prática de conhecimentos</p>
-            
-            <div class="timeline">
-                <!-- Experiência 1 -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="experiencia-header">
-                            <h3 class="cargo">Analista de Infraestrutura de TI</h3>
-                            <span class="empresa">Via Gráfit Jeans</span>
-                            <span class="periodo">Mai 2025 - Presente</span>
-                        </div>
-                        <div class="experiencia-descricao">
-                            <p>
-                                Responsável pela gestão e manutenção da infraestrutura de TI da empresa, aplicando conhecimentos técnicos em comunicação e resolução de problemas tecnológicos.
-                            </p>
-                            <ul class="responsabilidades">
-                                <li>Gerenciamento de servidores e redes corporativas</li>
-                                <li>Suporte técnico especializado para usuários</li>
-                                <li>Implementação de soluções de segurança da informação</li>
-                                <li>Documentação de processos e procedimentos técnicos</li>
-                            </ul>
-                            <div class="habilidades-desenvolvidas">
-                                <span class="skill-tag">Comunicação</span>
-                                <span class="skill-tag">Infraestrutura de TI</span>
-                                <span class="skill-tag">Resolução de Problemas</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="projeto destaque" data-aos="zoom-in">
+<h3>Sistema WM</h3>
+<p>Sistema de Gestão de Produção para pequenas e médias confecções.</p>
+<a href="#">Ver Projeto →</a>
+</div>
 
-                <!-- Experiência 2 -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="experiencia-header">
-                            <h3 class="cargo">Técnico de PCP</h3>
-                            <span class="empresa">Via Gráfit Jeans</span>
-                            <span class="periodo">Abr 2024 - Mai 2025</span>
-                        </div>
-                        <div class="experiencia-descricao">
-                            <p>
-                                Atuação em Planejamento e Controle de Produção, desenvolvendo habilidades essenciais em mapeamento de processos e trabalho em equipe que se traduzem diretamente para metodologias de desenvolvimento de software.
-                            </p>
-                            <ul class="responsabilidades">
-                                <li>Mapeamento e otimização de processos produtivos</li>
-                                <li>Análise de dados para tomada de decisões</li>
-                                <li>Coordenação de equipes multidisciplinares</li>
-                                <li>Implementação de melhorias contínuas</li>
-                            </ul>
-                            <div class="habilidades-desenvolvidas">
-                                <span class="skill-tag">Mapeamento de Processos</span>
-                                <span class="skill-tag">Trabalho em Equipe</span>
-                                <span class="skill-tag">Análise de Dados</span>
-                                <span class="skill-tag">Metodologias Ágeis</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="projeto" data-aos="zoom-in">
+<h3>Sistema de Apostas</h3>
+<p>Migração de planilhas Excel para sistema Web.</p>
+</div>
 
-                <!-- Experiência 3 -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="experiencia-header">
-                            <h3 class="cargo">Auxiliar de PCP</h3>
-                            <span class="empresa">Via Gráfit Jeans</span>
-                            <span class="periodo">Mai 2023 - Abr 2024</span>
-                        </div>
-                        <div class="experiencia-descricao">
-                            <p>
-                                Início da jornada em PCP, desenvolvendo base sólida em organização e administração de processos, fundamentais para qualquer projeto de desenvolvimento.
-                            </p>
-                            <ul class="responsabilidades">
-                                <li>Organização e controle de documentação</li>
-                                <li>Suporte administrativo em processos produtivos</li>
-                                <li>Coleta e organização de dados operacionais</li>
-                                <li>Apoio na implementação de melhorias</li>
-                            </ul>
-                            <div class="habilidades-desenvolvidas">
-                                <span class="skill-tag">Organização</span>
-                                <span class="skill-tag">Administração</span>
-                                <span class="skill-tag">Documentação</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="projeto" data-aos="zoom-in">
+<h3>Dashboard PCP</h3>
+<p>Controle de produção, metas e indicadores.</p>
+</div>
 
-                <!-- Experiência 4 -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="experiencia-header">
-                            <h3 class="cargo">Motorista de Caminhão</h3>
-                            <span class="empresa">Ambev</span>
-                            <span class="periodo">Mai 2021 - Nov 2022</span>
-                        </div>
-                        <div class="experiencia-descricao">
-                            <p>
-                                Experiência em ambiente corporativo de grande porte, desenvolvendo responsabilidade, cumprimento de normas e experiência em ambientes operacionais estruturados.
-                            </p>
-                            <div class="habilidades-desenvolvidas">
-                                <span class="skill-tag">Política de Segurança</span>
-                                <span class="skill-tag">Responsabilidade</span>
-                                <span class="skill-tag">Cumprimento de Normas</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="projeto" data-aos="zoom-in">
+<h3>Calculadora IMC</h3>
+<p>Projeto em Python.</p>
+</div>
 
-            <!-- Formação Acadêmica -->
-            <div class="formacao-academica">
-                <h3 class="formacao-titulo">Formação Acadêmica</h3>
-                <div class="formacao-grid">
-                    <div class="formacao-item">
-                        <div class="formacao-icone">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="formacao-info">
-                            <h4>Bacharelado em Engenharia de Software</h4>
-                            <span class="instituicao">UNOPAR - Universidade Norte do Paraná</span>
-                            <span class="periodo-formacao">2024 - 2028</span>
-                            <p class="formacao-descricao">
-                                Formação focada em desenvolvimento de software, arquitetura de sistemas, metodologias ágeis e boas práticas de engenharia.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="formacao-item">
-                        <div class="formacao-icone">
-                            <i class="fas fa-truck"></i>
-                        </div>
-                        <div class="formacao-info">
-                            <h4>Tecnólogo em Logística</h4>
-                            <span class="instituicao">Universidade Paulista</span>
-                            <span class="periodo-formacao">2016 - 2019</span>
-                            <p class="formacao-descricao">
-                                Base sólida em gestão de cadeias de suprimentos, otimização de processos e análise de sistemas logísticos.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+</div>
 
-            <!-- Certificações -->
-            <div class="certificacoes">
-            </div>
-        </div>
-                <h3 class="certificacoes-titulo">Certificações</h3>
-                    <div class="certificacao-item">
-                        <div class="certificacao-badge">
-                        <i class="fab fa-microsoft"></i>
-                        </div>
-                        <div class="certificacao-info">
-                        <h4>Desenvolver um agente de IA com o Serviço do Agente de IA do Azure</h4>
-                        <span class="certificacao-emissor">Microsoft Learn</span>
-                        <span class="certificacao-data">2025</span>
-                        </div>
-                    </div>
-                    
-                    <div class="certificacao-item">
-                        <div class="certificacao-badge">
-                        <i class="fab fa-microsoft"></i>
-                        </div>
-                        <div class="certificacao-info">
-                        <h4>Descrever a computação em nuvem</h4>
-                        <span class="certificacao-emissor">Microsoft Learn</span>
-                        <span class="certificacao-data">2024</span>
-                        </div>
-                    </div>
-                     
-                    <div class="certificacao-item">
-                        <div class="certificacao-badge">
-                        <i class="fab fa-microsoft"></i>
-                        </div> 
-                        <div class="certificacao-info">
-                        <h4>Definir configurações do aplicativo Web</h4>
-                        <span class="certificacao-emissor">Microsoft Learn</span>
-                        <span class="certificacao-data">2024</span>
-                        </div>
-                    </div>
-                </div>
-                </div>    
-            </div>
-        </div>
-    </section>
+</section>
 
-    <!-- Seção Blog -->
-    <section id="blog" class="blog">
-        <div class="container">
-            <h2 class="titulo-secao">Blog & Artigos</h2>
-            <p class="subtitulo-secao">Compartilhando conhecimentos e insights sobre Engenharia de Software</p>
-            
-            <div class="blog-grid">
-                <!-- Artigo 1 -->
-                <article class="blog-card">
-                    <div class="blog-imagem">
-                        <div class="blog-placeholder">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="blog-categoria">Engenharia de Software</div>
-                    </div>
-                    <div class="blog-conteudo">
-                        <h3 class="blog-titulo">A Importância do Clean Code em Projetos Reais</h3>
-                        <p class="blog-resumo">
-                            Explorando como princípios de código limpo impactam diretamente na manutenibilidade e escalabilidade de projetos de software, com exemplos práticos.
-                        </p>
-                        <div class="blog-meta">
-                            <span class="blog-data">
-                                <i class="fas fa-calendar"></i>
-                                Em breve
-                            </span>
-                            <span class="blog-tempo">
-                                <i class="fas fa-clock"></i>
-                                5 min de leitura
-                            </span>
-                        </div>
-                        <div class="blog-tags">
-                            <span class="tag">Clean Code</span>
-                            <span class="tag">Boas Práticas</span>
-                            <span class="tag">Manutenibilidade</span>
-                        </div>
-                    </div>
-                </article>
+<footer id="contato">
 
-                <!-- Artigo 2 -->
-                <article class="blog-card">
-                    <div class="blog-imagem">
-                        <div class="blog-placeholder">
-                            <i class="fas fa-vial"></i>
-                        </div>
-                        <div class="blog-categoria">Testes</div>
-                    </div>
-                    <div class="blog-conteudo">
-                        <h3 class="blog-titulo">Desvendando Testes Automatizados: Unitários, Integração e E2E</h3>
-                        <p class="blog-resumo">
-                            Um guia completo sobre diferentes tipos de testes automatizados e como implementá-los efetivamente em projetos de desenvolvimento.
-                        </p>
-                        <div class="blog-meta">
-                            <span class="blog-data">
-                                <i class="fas fa-calendar"></i>
-                                Em breve
-                            </span>
-                            <span class="blog-tempo">
-                                <i class="fas fa-clock"></i>
-                                8 min de leitura
-                            </span>
-                        </div>
-                        <div class="blog-tags">
-                            <span class="tag">TDD</span>
-                            <span class="tag">Testes Unitários</span>
-                            <span class="tag">Qualidade</span>
-                        </div>
-                    </div>
-                </article>
+<h2>Vamos construir algo juntos?</h2>
 
-                <!-- Artigo 3 -->
-                <article class="blog-card">
-                    <div class="blog-imagem">
-                        <div class="blog-placeholder">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <div class="blog-categoria">DevOps</div>
-                    </div>
-                    <div class="blog-conteudo">
-                        <h3 class="blog-titulo">Como Minha Experiência em PCP Otimiza o Gerenciamento de Projetos de Software</h3>
-                        <p class="blog-resumo">
-                            Conectando conceitos de Planejamento e Controle de Produção com metodologias ágeis e gerenciamento de projetos de software.
-                        </p>
-                        <div class="blog-meta">
-                            <span class="blog-data">
-                                <i class="fas fa-calendar"></i>
-                                Em breve
-                            </span>
-                            <span class="blog-tempo">
-                                <i class="fas fa-clock"></i>
-                                6 min de leitura
-                            </span>
-                        </div>
-                        <div class="blog-tags">
-                            <span class="tag">PCP</span>
-                            <span class="tag">Agile</span>
-                            <span class="tag">Gestão</span>
-                        </div>
-                    </div>
-                </article>
+<p>Disponível para oportunidades como Desenvolvedor de Software.</p>
 
-                <!-- Artigo 4 -->
-                <article class="blog-card">
-                    <div class="blog-imagem">
-                        <div class="blog-placeholder">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <div class="blog-categoria">Inteligência Artificial</div>
-                    </div>
-                    <div class="blog-conteudo">
-                        <h3 class="blog-titulo">Minha Jornada com IA no Azure: Aprendizados e Aplicações</h3>
-                        <p class="blog-resumo">
-                            Compartilhando a experiência de obter a certificação Azure AI e como aplicar conceitos de IA em projetos práticos.
-                        </p>
-                        <div class="blog-meta">
-                            <span class="blog-data">
-                                <i class="fas fa-calendar"></i>
-                                Em breve
-                            </span>
-                            <span class="blog-tempo">
-                                <i class="fas fa-clock"></i>
-                                7 min de leitura
-                            </span>
-                        </div>
-                        <div class="blog-tags">
-                            <span class="tag">Azure</span>
-                            <span class="tag">IA</span>
-                            <span class="tag">Machine Learning</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
+<div class="footer-buttons">
+<a href="#">LinkedIn</a>
+<a href="#">GitHub</a>
+<a href="#">WhatsApp</a>
+</div>
 
-    <!-- Seção Contato -->
-    <section id="contato" class="contatos">
-        <div class="container">
-            <h2 class="titulo-secao">Entre em Contato</h2>
-            <p class="subtitulo-secao">Vamos conversar sobre oportunidades e projetos</p>
-            
-            <div class="contato-container">
-                <div class="contato-info">
-                    <h3>Vamos trabalhar juntos!</h3>
-                    <p>
-                        Estou sempre aberto a novas oportunidades, projetos interessantes e conversas sobre tecnologia. 
-                        Se você tem uma ideia, um projeto ou simplesmente quer trocar experiências, não hesite em entrar em contato.
-                    </p>
-                    
-                    <div class="contato-metodos">
-                        <div class="contato-item">
-                            <div class="contato-icone">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contato-detalhes">
-                                <h4>Email</h4>
-                                <span>mostacowilian28@gmail.com</span>
-                            </div>
-                        </div>
-                        
-                        <div class="contato-item">
-                            <div class="contato-icone">
-                                <i class="fab fa-linkedin"></i>
-                            </div>
-                            <div class="contato-detalhes">
-                                <h4>LinkedIn</h4>
-                                <span>linkedin.com/in/wilian-mostaco/</span>
-                            </div>
-                        </div>
-                        
-                        <div class="contato-item">
-                            <div class="contato-icone">
-                                <i class="fab fa-github"></i>
-                            </div>
-                            <div class="contato-detalhes">
-                                <h4>GitHub</h4>
-                                <span>github.com/wilianmostaco</span>
-                            </div>
-                        </div>
-                        
-                        <div class="contato-item">
-                            <div class="contato-icone">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contato-detalhes">
-                                <h4>Localização</h4>
-                                <span>Londrina, Paraná, Brasil</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contato-formulario">
-                    <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
-                        <div class="form-group">
-                            <label for="nome">Nome</label>
-                            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="assunto">Assunto</label>
-                            <select id="assunto" name="assunto" required>
-                                <option value="">Selecione um assunto</option>
-                                <option value="oportunidade">Oportunidade de Trabalho</option>
-                                <option value="projeto">Projeto/Freelance</option>
-                                <option value="colaboracao">Colaboração</option>
-                                <option value="mentoria">Mentoria</option>
-                                <option value="outro">Outro</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="mensagem">Mensagem</label>
-                            <textarea id="mensagem" name="mensagem" rows="6" placeholder="Conte-me mais sobre sua ideia, projeto ou oportunidade..." required></textarea>
-                        </div>
-                        
-                        <div class="form-buttons">
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fab fa-whatsapp"></i>
-                                Enviar via WhatsApp
-                            </button>
-                            <button type="button" class="btn btn-secondary" onclick="enviarEmail()">
-                                <i class="fas fa-envelope"></i>
-                                Enviar por Email
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+<p class="copy">© 2026 Wilian Mostaço • WM Portfolio</p>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Wilian Mostaço</h3>
-                    <p>Desenvolvedor Full Stack & Engenheiro de Software em Formação</p>
-                    <p>Transformando experiência em processos em soluções tecnológicas inovadoras.</p>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Links Rápidos</h4>
-                    <ul>
-                        <li><a href="#inicio">Início</a></li>
-                        <li><a href="#sobre">Sobre</a></li>
-                        <li><a href="#projetos">Projetos</a></li>
-                        <li><a href="#habilidades">Habilidades</a></li>
-                        <li><a href="#contato">Contato</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-social">
-                    <h4>Redes Sociais</h4>
-                    <div class="social-links">
-                        <a href="https://linkedin.com/in/wilian-mostaco/" target="_blank" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/WMSistemamostaco" target="_blank" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="mailto:mostacowilian28@gmail.com" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="https://wa.me/5543988145521" target="_blank" aria-label="WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 Wilian Mostaço. Todos os direitos reservados.</p>
-                <p>Desenvolvido com <i class="fas fa-heart"></i> e muito <i class="fas fa-coffee"></i></p>
-            </div>
-        </div>
-    </footer>
+</footer>
 
-    <!-- Botão Voltar ao Topo -->
-    <button id="voltarTopo" class="voltar-topo" aria-label="Voltar ao topo">
-        <i class="fas fa-chevron-up"></i>
-    </button>
+<script src="script.js"></script>
 
-    <!-- Scripts -->
-    <script>
-        // Função para enviar mensagem via WhatsApp
-        function enviarWhats(event ) {
-            event.preventDefault();
+<script>
+AOS.init({duration:1000,once:true});
+</script>
 
-            const nome = document.getElementById("nome").value;
-            const email = document.getElementById("email").value;
-            const assunto = document.getElementById("assunto").value;
-            const mensagem = document.getElementById("mensagem").value;
-            const telefone = "5543988145521";
-
-            const texto = `Olá! Me chamo ${nome}.\n\n📧 Email: ${email}\n📋 Assunto: ${assunto}\n\n💬 Mensagem:\n${mensagem}\n\nEnviado através do portfólio.`;
-
-            const msgFormatada = encodeURIComponent(texto);
-            const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
-
-            window.open(url, "_blank" );
-        }
-
-        // Função para enviar por email
-        function enviarEmail() {
-            const nome = document.getElementById("nome").value;
-            const email = document.getElementById("email").value;
-            const assunto = document.getElementById("assunto").value;
-            const mensagem = document.getElementById("mensagem").value;
-
-            const subject = `[Portfólio] ${assunto} - ${nome}`;
-            const body = `Nome: ${nome}\nEmail: ${email}\nAssunto: ${assunto}\n\nMensagem:\n${mensagem}`;
-
-            const mailtoLink = `mailto:mostacowilian28@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            window.location.href = mailtoLink;
-        }
-
-        // Navegação suave
-        document.querySelectorAll("a[href^=\"#\"]").forEach(anchor => {
-            anchor.addEventListener("click", function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute("href"));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
-                }
-            });
-        });
-
-        // Menu mobile
-        const menuToggle = document.querySelector(".menu-toggle");
-        const menu = document.querySelector(".menu");
-
-        menuToggle.addEventListener("click", () => {
-            menu.classList.toggle("active");
-            menuToggle.classList.toggle("active");
-        });
-
-        // Fechar menu ao clicar em um link
-        document.querySelectorAll(".menu-link").forEach(link => {
-            link.addEventListener("click", () => {
-                menu.classList.remove("active");
-                menuToggle.classList.remove("active");
-            });
-        });
-
-        // Filtros de projetos
-        const filtros = document.querySelectorAll(".filtro-btn");
-        const projetos = document.querySelectorAll(".projeto-card");
-
-        filtros.forEach(filtro => {
-            filtro.addEventListener("click", () => {
-                // Remove active de todos os filtros
-                filtros.forEach(f => f.classList.remove("active"));
-                // Adiciona active ao filtro clicado
-                filtro.classList.add("active");
-
-                const categoria = filtro.getAttribute("data-filter");
-
-                projetos.forEach(projeto => {
-                    if (categoria === "todos" || projeto.getAttribute("data-categoria").includes(categoria)) {
-                        projeto.style.display = "block";
-                        setTimeout(() => {
-                            projeto.style.opacity = "1";
-                            projeto.style.transform = "translateY(0)";
-                        }, 100);
-                    } else {
-                        projeto.style.opacity = "0";
-                        projeto.style.transform = "translateY(20px)";
-                        setTimeout(() => {
-                            projeto.style.display = "none";
-                        }, 300);
-                    }
-                });
-            });
-        });
-
-        // Animação das barras de habilidades
-        function animarBarrasHabilidades() {
-            const barras = document.querySelectorAll(".nivel-barra");
-            
-            barras.forEach(barra => {
-                const nivel = barra.getAttribute("data-nivel");
-                barra.style.width = nivel + "%";
-            });
-        }
-
-        // Intersection Observer para animações
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("animate");
-                    
-                    // Animar barras de habilidades quando a seção for visível
-                    if (entry.target.id === "habilidades") {
-                        setTimeout(animarBarrasHabilidades, 500);
-                    }
-                }
-            });
-        }, observerOptions);
-
-        // Observar seções para animações
-        document.querySelectorAll("section").forEach(section => {
-            observer.observe(section);
-        });
-
-        // Botão voltar ao topo
-        const voltarTopo = document.getElementById("voltarTopo");
-
-        window.addEventListener("scroll", () => {
-            if (window.pageYOffset > 300) {
-                voltarTopo.classList.add("visible");
-            } else {
-                voltarTopo.classList.remove("visible");
-            }
-        });
-
-        voltarTopo.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
-
-        const navbar = document.querySelector(".navegacao");
-        
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 100) {
-                navbar.classList.add("scrolled");
-            } else {
-                navbar.classList.remove("scrolled");
-            }
-        });
-
-        function efeitoDigitacao() {
-            const texto = "Desenvolvedor Full Stack & Engenheiro de Software em Formação";
-            const elemento = document.querySelector(".cabecalho-sub-titulo");
-            let i = 0;
-
-            elemento.textContent = "";
-
-            function digitar() {
-                if (i < texto.length) {
-                    elemento.textContent += texto.charAt(i);
-                    i++;
-                    setTimeout(digitar, 50);
-                }
-            }
-
-            setTimeout(digitar, 1000);
-        }
-
-        window.addEventListener("load", () => {
-            efeitoDigitacao();
-        });
-
-        function criarParticulas() {
-            const particulas = document.querySelector(".particulas");
-            
-            for (let i = 0; i < 50; i++) {
-                const particula = document.createElement("div");
-                particula.className = "particula";
-                particula.style.left = Math.random() * 100 + "%";
-                particula.style.animationDelay = Math.random() * 20 + "s";
-                particula.style.animationDuration = (Math.random() * 10 + 10) + "s";
-                particulas.appendChild(particula);
-            }
-        }
-
-        
-        document.addEventListener("DOMContentLoaded", criarParticulas);
-    </script>
 </body>
-
 </html>
