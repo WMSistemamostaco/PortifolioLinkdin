@@ -1,1 +1,21 @@
+particlesJS('particles-js',{
+  particles:{
+    number:{value:80},
+    color:{value:'#3B82F6'},
+    shape:{type:'circle'},
+    opacity:{value:.5},
+    size:{value:3},
+    move:{enable:true,speed:2}
+  },
+  interactivity:{
+    events:{onhover:{enable:true,mode:'repulse'}},
+    modes:{repulse:{distance:120}}
+  }
+});
 
+const header=document.querySelector('header');
+window.addEventListener('scroll',()=>{
+  header.style.background=window.scrollY>60
+    ?'rgba(2,6,23,.95)'
+    :'rgba(5,10,20,.55)';
+});
