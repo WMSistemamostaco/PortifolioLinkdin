@@ -47,7 +47,7 @@
       position: relative;
     }
 
-    /* Partículas na tela inteira */
+    /* Partículas de fundo */
     #particles-js {
       position: fixed;
       top: 0;
@@ -59,7 +59,7 @@
       pointer-events: all;
     }
 
-    /* Header Navbar */
+    /* Header / Navbar */
     header {
       position: fixed;
       top: 0;
@@ -156,7 +156,7 @@
       box-shadow: 0 0 18px rgba(0, 210, 255, 0.6);
     }
 
-    /* Seções */
+    /* Seções Gerais */
     section {
       position: relative;
       z-index: 2;
@@ -263,36 +263,12 @@
       border-color: var(--brilho-destaque);
     }
 
-    /* --- FOTO COM CONTORNO NEON APRIMORADO --- */
+    /* --- FOTO DEV & TEXTO POSICIONADO ABAIXO --- */
     .hero-image-wrapper {
       position: relative;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-    }
-
-    .handwriting-text {
-      position: absolute;
-      top: 2%;
-      right: -10px;
-      font-family: 'Caveat', cursive;
-      font-size: 2.2rem;
-      color: var(--primary-cyan);
-      transform: rotate(-5deg);
-      text-shadow: 0 0 15px rgba(0, 210, 255, 0.9), 0 0 30px rgba(0, 210, 255, 0.5);
-      z-index: 10;
-      text-align: right;
-      line-height: 1.1;
-      pointer-events: none;
-    }
-
-    .handwriting-text::after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--primary-cyan));
-      margin-top: 4px;
     }
 
     .neon-photo-container {
@@ -324,19 +300,6 @@
       }
     }
 
-    .neon-photo-container::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 90%;
-      height: 90%;
-      background: radial-gradient(circle, rgba(0, 210, 255, 0.5) 0%, rgba(37, 99, 235, 0.3) 50%, transparent 80%);
-      filter: blur(45px);
-      z-index: 1;
-    }
-
     .neon-photo {
       width: 100%;
       height: auto;
@@ -347,7 +310,32 @@
       filter: drop-shadow(0 0 15px rgba(0, 210, 255, 0.4));
     }
 
-    /* SEÇÕES E CARDS */
+    /* TEXTO CURSIVO POSICIONADO NA PARTE INFERIOR DIREITA */
+    .handwriting-text-bottom {
+      align-self: flex-end;
+      margin-top: 1.2rem;
+      margin-right: 1rem;
+      font-family: 'Caveat', cursive;
+      font-size: 2.2rem;
+      color: var(--primary-cyan);
+      transform: rotate(-3deg);
+      text-shadow: 0 0 15px rgba(0, 210, 255, 0.9), 0 0 30px rgba(0, 210, 255, 0.5);
+      z-index: 10;
+      text-align: right;
+      line-height: 1.1;
+      pointer-events: none;
+    }
+
+    .handwriting-text-bottom::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary-cyan));
+      margin-top: 4px;
+    }
+
+    /* CABEÇALHOS E CARDS */
     .section-header {
       margin-bottom: 2.5rem;
     }
@@ -605,10 +593,10 @@
       .sobre-grid {
         grid-template-columns: 1fr;
       }
-      .handwriting-text {
-        top: 0%;
-        right: 0%;
-        font-size: 1.8rem;
+      .handwriting-text-bottom {
+        align-self: center;
+        margin-right: 0;
+        text-align: center;
       }
     }
 
@@ -677,13 +665,14 @@
     </div>
   </div>
 
-  <!-- FOTO DESTAQUE DEV COM BORDA NEON AJUSTADA -->
+  <!-- FOTO DESTAQUE DEV COM BORDA NEON & TEXTO ABAIXO -->
   <div class="hero-image-wrapper" data-aos="fade-left">
-    <div class="handwriting-text">
-      Código<br>Processo<br>Resultado
-    </div>
     <div class="neon-photo-container">
       <img src="img/Foto%20Wilian%20Dev.png" alt="Wilian Mostaço - Software Engineer" class="neon-photo">
+    </div>
+
+    <div class="handwriting-text-bottom">
+      Código<br>Processo<br>Resultado
     </div>
   </div>
 </section>
@@ -836,7 +825,7 @@
       </div>
     </div>
 
-    <!-- Microsoft Clone (IMAGEM CORRIGIDA PARA microsoftware.jpeg) -->
+    <!-- Microsoft Clone (NOME DA IMAGEM ATUALIZADO) -->
     <div class="glass-card projeto-card" data-aos="fade-up" data-aos-delay="200">
       <div class="projeto-thumb">
         <img src="img/microsoftware.jpeg" alt="Microsoft Clone">
