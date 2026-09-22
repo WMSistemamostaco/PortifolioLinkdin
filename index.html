@@ -47,7 +47,7 @@
       position: relative;
     }
 
-    /* Partículas cobrindo a tela e capturando o movimento do mouse */
+    /* Partículas na tela inteira */
     #particles-js {
       position: fixed;
       top: 0;
@@ -59,7 +59,7 @@
       pointer-events: all;
     }
 
-    /* Cabeçalho Navbar */
+    /* Header Navbar */
     header {
       position: fixed;
       top: 0;
@@ -156,7 +156,7 @@
       box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
     }
 
-    /* Estilo Geral de Seções */
+    /* Estilo Geral das Seções */
     section {
       position: relative;
       z-index: 2;
@@ -263,7 +263,7 @@
       border-color: var(--brilho-destaque);
     }
 
-    /* ÁREA DA FOTO COM BRILHO NEON E MANUSCRITO */
+    /* FOTO COM NEON E MANUSCRITO */
     .hero-image-wrapper {
       position: relative;
       display: flex;
@@ -324,7 +324,7 @@
       filter: drop-shadow(0 0 20px rgba(0, 210, 255, 0.35)) drop-shadow(0 0 40px rgba(59, 130, 246, 0.25));
     }
 
-    /* TÍTULOS DE SEÇÃO */
+    /* SEÇÕES E CARDS */
     .section-header {
       margin-bottom: 2.5rem;
     }
@@ -345,7 +345,6 @@
       opacity: 0.3;
     }
 
-    /* CARDS EM GLASSMORPHISM */
     .glass-card {
       background: var(--bg-card);
       border: 1px solid var(--border-glow);
@@ -560,7 +559,6 @@
       font-size: 0.85rem;
     }
 
-    /* RESPONSIVIDADE */
     @media (max-width: 992px) {
       .hero {
         grid-template-columns: 1fr;
@@ -594,7 +592,7 @@
 </head>
 <body>
 
-<!-- CANVAS DE PARTÍCULAS EM TELA INTEIRA -->
+<!-- CANVAS DE PARTÍCULAS -->
 <div id="particles-js"></div>
 
 <!-- HEADER / NAVBAR -->
@@ -647,13 +645,13 @@
     </div>
   </div>
 
-  <!-- FOTO DESTAQUE COM ILUMINAÇÃO NEON -->
+  <!-- FOTO DESTAQUE COM CAMINHO DA PASTA IMG CORRIGIDO -->
   <div class="hero-image-wrapper" data-aos="fade-left">
     <div class="handwriting-text">
       Código<br>Processo<br>Resultado
     </div>
     <div class="neon-photo-container">
-      <img src="imagem/Foto%20Wilian%20Dev.png" alt="Wilian Mostaço - Software Engineer" class="neon-photo">
+      <img src="img/Foto%20Wilian%20Dev.png" alt="Wilian Mostaço - Software Engineer" class="neon-photo">
     </div>
   </div>
 </section>
@@ -666,7 +664,7 @@
 
   <div class="sobre-grid">
     <div class="sobre-foto-box" data-aos="zoom-in">
-      <img src="imagem/Foto%20Wilian%20Social.png" alt="Wilian Mostaço">
+      <img src="img/Foto%20Wilian%20Social.png" alt="Wilian Mostaço">
     </div>
 
     <div class="sobre-info" data-aos="fade-left">
@@ -734,7 +732,7 @@
   </div>
 </section>
 
-<!-- PROJETOS EM DESTAQUE -->
+<!-- PROJETOS -->
 <section id="projetos" class="projetos">
   <div class="section-header" data-aos="fade-up">
     <h2><i class="fa-solid fa-diagram-project" style="color: var(--primary-cyan);"></i> Projetos em Destaque</h2>
@@ -744,7 +742,7 @@
     <!-- Sistema WM -->
     <div class="glass-card projeto-card" data-aos="fade-up">
       <div class="projeto-thumb">
-        <img src="imagem/Software%20e%20Logsitica.jpeg" alt="Sistema WM">
+        <img src="img/Software%20e%20Logsitica.jpeg" alt="Sistema WM">
       </div>
       <h3>Sistema WM</h3>
       <p>Sistema Web de gestão de produção para pequenas e médias confecções. PCP, terceiros, produção e relatórios num só lugar.</p>
@@ -757,7 +755,7 @@
     <!-- API Logística -->
     <div class="glass-card projeto-card" data-aos="fade-up" data-aos-delay="100">
       <div class="projeto-thumb">
-        <img src="imagem/API%20LOGISTICA.jpeg" alt="API Logística">
+        <img src="img/API%20LOGISTICA.jpeg" alt="API Logística">
       </div>
       <h3>API Logística</h3>
       <p>Integração RESTful entre processos logísticos da indústria e aplicações web para acompanhamento em tempo real.</p>
@@ -770,7 +768,7 @@
     <!-- Dashboard PCP -->
     <div class="glass-card projeto-card" data-aos="fade-up" data-aos-delay="200">
       <div class="projeto-thumb">
-        <img src="imagem/PCP%20na%20Industria.jpeg" alt="Dashboard PCP">
+        <img src="img/PCP%20na%20Industria.jpeg" alt="Dashboard PCP">
       </div>
       <h3>Dashboard PCP</h3>
       <p>Painel de controlo de produção industrial, gestão de metas e acompanhamento de indicadores de eficiência.</p>
@@ -783,7 +781,7 @@
     <!-- Calculadora IMC -->
     <div class="glass-card projeto-card" data-aos="fade-up">
       <div class="projeto-thumb">
-        <img src="imagem/Linguagens%20de%20Programa%C3%A7%C3%A3o.jpeg" alt="Calculadora IMC">
+        <img src="img/Linguagens%20de%20Programa%C3%A7%C3%A3o.jpeg" alt="Calculadora IMC">
       </div>
       <h3>Calculadora IMC</h3>
       <p>Aplicação desenvolvida em Python para cálculo e acompanhamento de parâmetros de saúde.</p>
@@ -796,7 +794,7 @@
     <!-- Sistema de Apostas -->
     <div class="glass-card projeto-card" data-aos="fade-up" data-aos-delay="100">
       <div class="projeto-thumb">
-        <img src="imagem/TI.jpeg" alt="Sistema de Apostas">
+        <img src="img/TI.jpeg" alt="Sistema de Apostas">
       </div>
       <h3>Sistema de Apostas</h3>
       <p>Migração de ferramenta analítica em Excel para aplicação web responsiva com base de dados.</p>
@@ -809,7 +807,7 @@
     <!-- Microsoft Clone -->
     <div class="glass-card projeto-card" data-aos="fade-up" data-aos-delay="200">
       <div class="projeto-thumb">
-        <img src="imagem/microsoftware.jpeg" alt="Microsoft Clone">
+        <img src="img/microsoftware.jpeg" alt="Microsoft Clone">
       </div>
       <h3>Microsoft Clone</h3>
       <p>Recriação da interface corporativa da Microsoft focando em responsividade e precisão CSS.</p>
@@ -846,15 +844,13 @@
 <!-- SCRIPT DE ANIMAÇÃO AOS -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
-<!-- CONFIGURAÇÃO COMPLETA DAS PARTÍCULAS INTERATIVAS -->
+<!-- CONFIGURAÇÃO DAS PARTÍCULAS -->
 <script>
-  // Inicialização das animações
   AOS.init({
     duration: 900,
     once: true
   });
 
-  // Configuração das Partículas ativas com efeito Repulse (Afastamento)
   particlesJS("particles-js", {
     "particles": {
       "number": {
@@ -896,7 +892,7 @@
       }
     },
     "interactivity": {
-      "detect_on": "window", // Detecta o movimento do mouse em toda a janela
+      "detect_on": "window",
       "events": {
         "onhover": {
           "enable": true,
@@ -910,7 +906,7 @@
       },
       "modes": {
         "repulse": {
-          "distance": 160, // Distância do raio de repulsão do mouse
+          "distance": 160,
           "duration": 0.4
         }
       }
