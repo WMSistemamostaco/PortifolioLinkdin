@@ -20,13 +20,13 @@
 
   <style>
     :root {
-      --bg-escuro: #060913;
-      --bg-card: rgba(13, 22, 41, 0.65);
-      --bg-card-hover: rgba(20, 35, 65, 0.8);
+      --bg-escuro: #040711;
+      --bg-card: rgba(10, 18, 36, 0.7);
+      --bg-card-hover: rgba(16, 30, 58, 0.85);
       --border-glow: rgba(0, 210, 255, 0.25);
-      --border-glow-hover: rgba(0, 210, 255, 0.6);
+      --border-glow-hover: rgba(0, 210, 255, 0.7);
       --primary-cyan: #00d2ff;
-      --azul-primario: #3b82f6;
+      --azul-primario: #2563eb;
       --brilho-destaque: #00f0ff;
       --texto-principal: #f1f5f9;
       --texto-silenciado: #94a3b8;
@@ -65,10 +65,10 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(6, 9, 19, 0.85);
+      background: rgba(4, 7, 17, 0.85);
       backdrop-filter: blur(12px);
       z-index: 100;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(0, 210, 255, 0.1);
       padding: 0.8rem 5%;
     }
 
@@ -93,7 +93,7 @@
       font-size: 1.1rem;
       padding: 0.3rem 0.6rem;
       border-radius: 6px;
-      box-shadow: 0 0 12px rgba(0, 210, 255, 0.4);
+      box-shadow: 0 0 12px rgba(0, 210, 255, 0.5);
     }
 
     .logo-text h3 {
@@ -126,7 +126,7 @@
 
     .menu a:hover {
       color: var(--primary-cyan);
-      text-shadow: 0 0 8px rgba(0, 210, 255, 0.5);
+      text-shadow: 0 0 10px rgba(0, 210, 255, 0.6);
     }
 
     .nav-actions {
@@ -153,10 +153,10 @@
     .btn-curriculo:hover {
       background: var(--primary-cyan);
       color: #000;
-      box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+      box-shadow: 0 0 18px rgba(0, 210, 255, 0.6);
     }
 
-    /* Estilo Geral das Seções */
+    /* Seções */
     section {
       position: relative;
       z-index: 2;
@@ -187,7 +187,7 @@
       font-weight: 800;
       line-height: 1.1;
       margin: 0.4rem 0 1rem;
-      background: linear-gradient(90deg, #ffffff, #88d0ff);
+      background: linear-gradient(90deg, #ffffff, #7dd3fc);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -216,7 +216,7 @@
 
     .badge-item {
       background: rgba(15, 28, 55, 0.8);
-      border: 1px solid rgba(0, 210, 255, 0.3);
+      border: 1px solid rgba(0, 210, 255, 0.35);
       color: var(--primary-cyan);
       padding: 0.4rem 0.9rem;
       border-radius: 20px;
@@ -239,13 +239,13 @@
       border-radius: 8px;
       font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+      box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
       transition: all 0.3s;
     }
 
     .btn-main:hover {
       transform: translateY(-2px);
-      box-shadow: 0 0 30px rgba(0, 210, 255, 0.6);
+      box-shadow: 0 0 32px rgba(0, 210, 255, 0.7);
     }
 
     .btn-outline {
@@ -259,11 +259,11 @@
     }
 
     .btn-outline:hover {
-      background: rgba(0, 210, 255, 0.1);
+      background: rgba(0, 210, 255, 0.12);
       border-color: var(--brilho-destaque);
     }
 
-    /* FOTO COM NEON E MANUSCRITO */
+    /* --- FOTO COM CONTORNO NEON APRIMORADO --- */
     .hero-image-wrapper {
       position: relative;
       display: flex;
@@ -273,16 +273,17 @@
 
     .handwriting-text {
       position: absolute;
-      top: 5%;
-      right: 2%;
+      top: 2%;
+      right: -10px;
       font-family: 'Caveat', cursive;
-      font-size: 2.3rem;
+      font-size: 2.2rem;
       color: var(--primary-cyan);
-      transform: rotate(-6deg);
-      text-shadow: 0 0 12px rgba(0, 210, 255, 0.8);
+      transform: rotate(-5deg);
+      text-shadow: 0 0 15px rgba(0, 210, 255, 0.9), 0 0 30px rgba(0, 210, 255, 0.5);
       z-index: 10;
       text-align: right;
       line-height: 1.1;
+      pointer-events: none;
     }
 
     .handwriting-text::after {
@@ -299,6 +300,28 @@
       width: 100%;
       max-width: 440px;
       border-radius: 20px;
+      padding: 6px;
+      background: linear-gradient(135deg, rgba(0, 210, 255, 0.8), rgba(37, 99, 235, 0.3), rgba(0, 210, 255, 0.8));
+      box-shadow: 
+        0 0 25px rgba(0, 210, 255, 0.5),
+        0 0 50px rgba(37, 99, 235, 0.3),
+        inset 0 0 15px rgba(0, 210, 255, 0.4);
+      animation: neonPulse 4s infinite alternate;
+    }
+
+    @keyframes neonPulse {
+      0% {
+        box-shadow: 
+          0 0 20px rgba(0, 210, 255, 0.4),
+          0 0 40px rgba(37, 99, 235, 0.2),
+          inset 0 0 10px rgba(0, 210, 255, 0.3);
+      }
+      100% {
+        box-shadow: 
+          0 0 35px rgba(0, 210, 255, 0.8),
+          0 0 70px rgba(37, 99, 235, 0.5),
+          inset 0 0 20px rgba(0, 210, 255, 0.6);
+      }
     }
 
     .neon-photo-container::before {
@@ -307,10 +330,10 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 85%;
-      height: 85%;
-      background: radial-gradient(circle, rgba(0, 210, 255, 0.45) 0%, rgba(59, 130, 246, 0.3) 40%, transparent 70%);
-      filter: blur(40px);
+      width: 90%;
+      height: 90%;
+      background: radial-gradient(circle, rgba(0, 210, 255, 0.5) 0%, rgba(37, 99, 235, 0.3) 50%, transparent 80%);
+      filter: blur(45px);
       z-index: 1;
     }
 
@@ -321,7 +344,7 @@
       position: relative;
       z-index: 2;
       border-radius: 16px;
-      filter: drop-shadow(0 0 20px rgba(0, 210, 255, 0.35)) drop-shadow(0 0 40px rgba(59, 130, 246, 0.25));
+      filter: drop-shadow(0 0 15px rgba(0, 210, 255, 0.4));
     }
 
     /* SEÇÕES E CARDS */
@@ -357,7 +380,7 @@
     .glass-card:hover {
       background: var(--bg-card-hover);
       border-color: var(--border-glow-hover);
-      box-shadow: 0 10px 30px rgba(0, 210, 255, 0.15);
+      box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2);
       transform: translateY(-4px);
     }
 
@@ -374,6 +397,7 @@
       border-radius: 16px;
       overflow: hidden;
       border: 1px solid var(--border-glow);
+      box-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
     }
 
     .sobre-foto-box img {
@@ -472,6 +496,8 @@
       overflow: hidden;
       margin-bottom: 1.2rem;
       position: relative;
+      background: #0d1527;
+      border: 1px solid rgba(0, 210, 255, 0.2);
     }
 
     .projeto-thumb img {
@@ -511,6 +537,12 @@
       display: flex;
       align-items: center;
       gap: 0.4rem;
+      transition: color 0.3s;
+    }
+
+    .btn-proj:hover {
+      color: #fff;
+      text-shadow: 0 0 8px var(--primary-cyan);
     }
 
     /* CONTATO E FOOTER */
@@ -546,7 +578,7 @@
       border-color: var(--primary-cyan);
       background: rgba(0, 210, 255, 0.15);
       color: var(--primary-cyan);
-      box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
+      box-shadow: 0 0 18px rgba(0, 210, 255, 0.4);
     }
 
     footer {
@@ -574,8 +606,8 @@
         grid-template-columns: 1fr;
       }
       .handwriting-text {
-        top: 2%;
-        right: 2%;
+        top: 0%;
+        right: 0%;
         font-size: 1.8rem;
       }
     }
@@ -645,7 +677,7 @@
     </div>
   </div>
 
-  <!-- FOTO DESTAQUE COM CAMINHO DA PASTA IMG CORRIGIDO -->
+  <!-- FOTO DESTAQUE DEV COM BORDA NEON AJUSTADA -->
   <div class="hero-image-wrapper" data-aos="fade-left">
     <div class="handwriting-text">
       Código<br>Processo<br>Resultado
@@ -804,7 +836,7 @@
       </div>
     </div>
 
-    <!-- Microsoft Clone -->
+    <!-- Microsoft Clone (IMAGEM CORRIGIDA PARA microsoftware.jpeg) -->
     <div class="glass-card projeto-card" data-aos="fade-up" data-aos-delay="200">
       <div class="projeto-thumb">
         <img src="img/microsoftware.jpeg" alt="Microsoft Clone">
