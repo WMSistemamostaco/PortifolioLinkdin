@@ -8,7 +8,7 @@ particlesJS("particles-js", {
       }
     },
     "color": {
-      "value": "#3b82f6" // Cor das partículas (azul)
+      "value": "#3b82f6"
     },
     "shape": {
       "type": "circle"
@@ -43,7 +43,7 @@ particlesJS("particles-js", {
     "events": {
       "onhover": {
         "enable": true,
-        "mode": "repulse" // Faz as partículas se afastarem do cursor
+        "mode": "repulse"
       },
       "onclick": {
         "enable": true,
@@ -53,7 +53,7 @@ particlesJS("particles-js", {
     },
     "modes": {
       "repulse": {
-        "distance": 100, // Distância do afastamento ao passar o mouse
+        "distance": 120,
         "duration": 0.4
       }
     }
