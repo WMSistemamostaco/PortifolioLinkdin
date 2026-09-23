@@ -694,3 +694,28 @@ footer {
 @media (max-width: 768px) {
   .menu { display: none; }
 }
+/* Efeito Rastro Neon / Estrela Cadente */
+.star-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: #00f0ff;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #7000ff;
+  animation: starFade 0.6s linear forwards;
+  z-index: 9999;
+}
+
+@keyframes starFade {
+  0% {
+    opacity: 1;
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.2) translate(var(--mx, 0px), var(--my, 15px));
+  }
+}
