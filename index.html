@@ -394,3 +394,74 @@
 </script>
 </body>
 </html>
+<!-- SCRIPTS EXISTENTES -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+  
+  <!-- Inicialização do Particles.js -->
+  <script>
+    if (typeof particlesJS !== 'undefined') {
+      particlesJS("particles-js", {
+        "particles": {
+          "number": { "value": 75, "density": { "enable": true, "value_area": 800 } },
+          "color": { "value": "#00f0ff" },
+          "shape": { "type": "circle" },
+          "opacity": { "value": 0.5, "random": false },
+          "size": { "value": 3, "random": true },
+          "line_linked": { "enable": true, "distance": 140, "color": "#00f0ff", "opacity": 0.25, "width": 1 },
+          "move": { "enable": true, "speed": 1.8, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+        },
+        "interactivity": {
+          "detect_on": "window",
+          "events": {
+            "onhover": { 
+              "enable": true, 
+              "mode": "repulse"
+            }, 
+            "onclick": { "enable": true, "mode": "push" }, 
+            "resize": true 
+          },
+          "modes": {
+            "repulse": {
+              "distance": 80,
+              "duration": 0.4
+            }
+          }
+        },
+        "retina_detect": true
+      });
+    }
+  </script>
+
+  <!-- NOVO SCRIPT: Rastro Neon Estrela Cadente -->
+  <script>
+    let lastX = 0;
+    let lastY = 0;
+
+    window.addEventListener('mousemove', function (e) {
+      if (Math.hypot(e.clientX - lastX, e.clientY - lastY) > 8) {
+        lastX = e.clientX;
+        lastY = e.clientY;
+
+        const star = document.createElement('div');
+        star.className = 'star-trail';
+        
+        star.style.left = e.clientX + 'px';
+        star.style.top = e.clientY + 'px';
+
+        const randomX = (Math.random() - 0.5) * 20;
+        const randomY = Math.random() * 20 + 10;
+        star.style.setProperty('--mx', `${randomX}px`);
+        star.style.setProperty('--my', `${randomY}px`);
+
+        document.body.appendChild(star);
+
+        setTimeout(() => {
+          star.remove();
+        }, 600);
+      }
+    });
+  </script>
+
+</body>
+</html>
