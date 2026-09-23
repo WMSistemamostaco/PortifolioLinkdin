@@ -725,9 +725,10 @@ footer {
   background: transparent;
   border: none;
   color: #00f0ff;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   cursor: pointer;
   z-index: 1001;
+  padding: 5px;
 }
 
 @media (max-width: 768px) {
@@ -736,9 +737,13 @@ footer {
   }
 
   .navbar {
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
   }
 
+  /* Esconde os links do menu normal no mobile */
   .menu {
     display: none;
     flex-direction: column;
@@ -746,7 +751,7 @@ footer {
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(10, 15, 30, 0.95);
+    background: rgba(10, 15, 30, 0.98);
     backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(0, 240, 255, 0.2);
     padding: 1.5rem;
@@ -760,8 +765,9 @@ footer {
     animation: fadeInDown 0.3s ease forwards;
   }
 
+  /* Oculta o botão de CV na barra mobile para dar espaço ao ícone */
   .nav-actions {
-    display: none; /* No mobile, fica limpo para não sobrecarregar o topo */
+    display: none !important;
   }
 }
 
