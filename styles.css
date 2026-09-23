@@ -781,3 +781,128 @@ footer {
     transform: translateY(0);
   }
 }
+/* --- STATUS TAG DO PROJETO PRINCIPAL --- */
+.status-project-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 193, 7, 0.15);
+  border: 1px solid rgba(255, 193, 7, 0.4);
+  color: #ffc107;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+/* --- NOVO FORMATO DE SKILLS (SEM BARRA %) --- */
+.skills-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  flex: 1;
+}
+
+.skill-group h3 {
+  font-size: 1.1rem;
+  color: #00f0ff;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill-group p {
+  color: #a0aec0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* --- MENU HAMBÚRGUER MOBILE --- */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #00f0ff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 5px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 15, 30, 0.98);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+    padding: 1.5rem;
+    gap: 1.2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  .menu.active {
+    display: flex;
+    animation: fadeInDown 0.3s ease forwards;
+  }
+
+  .nav-actions {
+    display: none !important;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efeito Rastro Neon / Estrela Cadente */
+.star-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: #00f0ff;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #7000ff;
+  animation: starFade 0.6s linear forwards;
+  z-index: 9999;
+}
+
+@keyframes starFade {
+  0% {
+    opacity: 1;
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.2) translate(var(--mx, 0px), var(--my, 15px));
+  }
+}
