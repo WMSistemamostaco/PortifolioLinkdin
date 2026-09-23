@@ -23,6 +23,10 @@
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.16"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
+  <!-- Ícone para o navegador e Atalho na Tela Inicial (App Icon) -->
+  <link rel="icon" type="image/png" href="img/Foto%20Wilian%20Dev.png">
+  <link rel="apple-touch-icon" href="img/Foto%20Wilian%20Dev.png">
+  
   <!-- CSS Vinculado -->
   <link rel="stylesheet" href="./styles.css">
 </head>
@@ -34,7 +38,7 @@
   <!-- Fundo de Partículas -->
   <div id="particles-js" style="position: fixed; width: 100%; height: 100%; z-index: -1;"></div>
 
-  <!-- HEADER / NAVBAR -->
+ <!-- HEADER / NAVBAR -->
   <header>
     <nav class="navbar">
       <div class="logo">
@@ -45,7 +49,12 @@
         </div>
       </div>
 
-      <ul class="menu">
+      <!-- Botão Hambúrguer Mobile -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="menu" id="navMenu">
         <li><a href="#inicio">Início</a></li>
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#projetos">Projetos</a></li>
@@ -55,9 +64,8 @@
       </ul>
 
       <div class="nav-actions">
-          <a href="./Curriculo_Wilian_Mostaco.pdf" download="Curriculo_Wilian_Mostaco.pdf" class="btn-curriculo">
-              <i class="fa-solid fa-download"></i> Download CV
-          </a>
+        <a href="./Curriculo_Wilian_Mostaco.pdf" download="Curriculo_Wilian_Mostaco.pdf" class="btn-curriculo">
+          <i class="fa-solid fa-download"></i> Download CV
         </a>
       </div>
     </nav>
