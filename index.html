@@ -50,9 +50,10 @@
       </div>
 
       <!-- Botão Hambúrguer Mobile -->
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+      <!-- Botão Hambúrguer Mobile -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+    <i class="fa-solid fa-bars">&#9776;</i>
+    </button>
 
       <ul class="menu" id="navMenu">
         <li><a href="#inicio">Início</a></li>
@@ -494,36 +495,28 @@
   });
 </script>
   <!-- Script do Menu Mobile -->
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-    const menuLinks = document.querySelectorAll('.menu a');
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+  const menuLinks = document.querySelectorAll('.menu a');
 
-    if (menuToggle && navMenu) {
-      menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        const icon = menuToggle.querySelector('i');
-        if (navMenu.classList.contains('active')) {
-          icon.classList.remove('fa-bars');
-          icon.classList.add('fa-xmark');
-        } else {
-          icon.classList.remove('fa-xmark');
-          icon.classList.add('fa-bars');
-        }
-      });
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      if (navMenu.classList.contains('active')) {
+        menuToggle.innerHTML = '&#10005;'; // Ícone de Fechar (X)
+      } else {
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars">&#9776;</i>'; // Ícone de Menu (☰)
+      }
+    });
 
-      // Fecha o menu ao clicar em qualquer item
-      menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          navMenu.classList.remove('active');
-          const icon = menuToggle.querySelector('i');
-          if (icon) {
-            icon.classList.remove('fa-xmark');
-            icon.classList.add('fa-bars');
-          }
-        });
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars">&#9776;</i>';
       });
-    }
-  </script>
+    });
+  }
+</script>
 </body>
 </html>
