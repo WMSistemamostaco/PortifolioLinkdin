@@ -719,3 +719,59 @@ footer {
     transform: scale(0.2) translate(var(--mx, 0px), var(--my, 15px));
   }
 }
+/* --- MENU HAMBÚRGUER MOBILE --- */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #00f0ff;
+  font-size: 1.6rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar {
+    position: relative;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 15, 30, 0.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+    padding: 1.5rem;
+    gap: 1.2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  .menu.active {
+    display: flex;
+    animation: fadeInDown 0.3s ease forwards;
+  }
+
+  .nav-actions {
+    display: none; /* No mobile, fica limpo para não sobrecarregar o topo */
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
