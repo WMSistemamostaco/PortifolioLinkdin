@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wilian Mostaço | Software Engineer & Full Stack Developer</title>
+  <title>Wilian Mostaço | Desenvolvedor de Software & Full Stack</title>
   
- <!-- SEO & Open Graph para WhatsApp, LinkedIn e Redes Sociais -->
-  <meta name="description" content="Portfólio de Wilian Mostaço - Engenheiro de Software em formação, Desenvolvedor Full Stack e criador do Sistema WM." />
-  <meta property="og:title" content="Wilian Mostaço | Software Engineer" />
-  <meta property="og:description" content="Desenvolvimento de sistemas web, automação e gestão empresarial com base em Engenharia de Software." />
-  
-  <!-- Imagem de Prévia no WhatsApp / Redes Sociais (URL Completa) -->
+  <!-- SEO & Open Graph -->
+  <meta name="description" content="Portfólio de Wilian Mostaço - Desenvolvedor Full Stack, estudante de Engenharia de Software e criador do Sistema WM." />
+  <meta property="og:title" content="Wilian Mostaço | Desenvolvedor de Software" />
+  <meta property="og:description" content="Desenvolvimento de sistemas web, APIs REST, automação e gestão de processos." />
   <meta property="og:image" content="https://wmsistemamostaco.github.io/PortifolioLinkdin/img/Foto%20Wilian%20Dev.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://wmsistemamostaco.github.io/PortifolioLinkdin/" />
+
+  <!-- App Icons -->
+  <link rel="icon" type="image/png" href="img/Foto%20Wilian%20Dev.png">
+  <link rel="apple-touch-icon" href="img/Foto%20Wilian%20Dev.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,26 +28,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
-  <!-- Typed.js & Particles.js -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.16"></script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
-  <!-- Ícone para o navegador e Atalho na Tela Inicial (App Icon) -->
-  <link rel="icon" type="image/png" href="img/Foto%20Wilian%20Dev.png">
-  <link rel="apple-touch-icon" href="img/Foto%20Wilian%20Dev.png">
-  
   <!-- CSS Vinculado -->
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 
-  <!-- Cursor Neon -->
-  <div class="cursor-glow" id="cursorGlow"></div>
-
   <!-- Fundo de Partículas -->
   <div id="particles-js" style="position: fixed; width: 100%; height: 100%; z-index: -1;"></div>
 
- <!-- HEADER / NAVBAR -->
+  <!-- HEADER / NAVBAR -->
   <header>
     <nav class="navbar">
       <div class="logo">
@@ -57,17 +51,16 @@
       </div>
 
       <!-- Botão Hambúrguer Mobile -->
-      <!-- Botão Hambúrguer Mobile -->
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
-    <i class="fa-solid fa-bars">&#9776;</i>
-    </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+        <i class="fa-solid fa-bars">&#9776;</i>
+      </button>
 
       <ul class="menu" id="navMenu">
         <li><a href="#inicio">Início</a></li>
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#jornada">Jornada</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#jornada">Jornada</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
 
@@ -87,10 +80,11 @@
       </div>
 
       <h1>Wilian <span class="highlight">Mostaço</span></h1>
-      <h2><span id="typed-text"></span></h2>
+      <h2>Desenvolvedor de Software | Full Stack</h2>
 
       <p class="sub">
-        Desenvolvendo soluções web de alto impacto que unem Engenharia de Software, automação de processos e experiência real em inteligência industrial.
+        Desenvolvedor focado em sistemas web, APIs REST, automação e soluções para gestão de processos.<br>
+        Estudante de Engenharia de Software com experiência prática em PCP, dados e processos industriais.
       </p>
 
       <div class="hero-badges">
@@ -102,23 +96,23 @@
       </div>
 
       <div class="hero-buttons">
-        <a href="#projetos" class="btn-main">Ver Projetos SaaS <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#projetos" class="btn-main">Ver Projetos <i class="fa-solid fa-arrow-right"></i></a>
         <a href="https://github.com/WMSistemamostaco" target="_blank" class="btn-outline"><i class="fa-brands fa-github"></i> GitHub</a>
       </div>
 
       <div class="location-tag">
-        <i class="fa-solid fa-location-dot"></i> Londrina — Paraná, Brasil
+        <i class="fa-solid fa-location-dot"></i> Londrina — PR, Brasil
       </div>
     </div>
 
     <div class="hero-image-wrapper" data-aos="fade-left">
       <div class="neon-photo-container">
-        <img src="img/Foto%20Wilian%20Dev.png" alt="Wilian Mostaço - Software Engineer" class="neon-photo">
+        <img src="img/Foto%20Wilian%20Dev.png" alt="Wilian Mostaço - Desenvolvedor de Software" class="neon-photo">
       </div>
       <div class="hero-stats-card glass-card">
         <div class="stat-item">
-          <h4><span class="counter" data-target="15">0</span>+</h4>
-          <p>Projetos & APIs</p>
+          <h4>14</h4>
+          <p>Repositórios Públicos</p>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
@@ -132,7 +126,7 @@
   <!-- SOBRE MIM -->
   <section id="sobre" class="sobre">
     <div class="section-header" data-aos="fade-up">
-      <h2><i class="fa-solid fa-user-astronaut"></i> Quem Sou Eu</h2>
+      <h2><i class="fa-solid fa-user"></i> Sobre Mim</h2>
     </div>
 
     <div class="sobre-grid">
@@ -142,27 +136,27 @@
 
       <div class="sobre-info" data-aos="fade-left">
         <p class="highlight-p">
-          Sou estudante de <strong>Engenharia de Software</strong> e desenvolvedor focado na criação de sistemas web modernos, arquitetura de APIs e automação empresarial.
+          Sou estudante de <strong>Engenharia de Software</strong> focado no desenvolvimento de aplicações web, APIs RESTful e automações.
         </p>
         <p>
-          Minha sólida bagagem em Planejamento e Controle de Produção (PCP) e processos industriais me dá uma visão analítica única: não desenvolvo apenas código, entendo as dores reais do negócio e as transformo em software eficiente, escalável e intuitivo.
+          Minha trajetória em Planejamento e Controle de Produção (PCP) e gestão operacional me dá uma visão prática sobre regras de negócio e eficiência de processos, permitindo traduzir requisitos complexos em código limpo, funcional e bem estruturado.
         </p>
 
         <div class="cards-about-grid">
           <div class="glass-card card-about">
-            <i class="fa-solid fa-graduation-cap icon-about"></i>
-            <h3>Engenharia de Software</h3>
-            <p>Formação sólida em algoritmos, arquitetura de sistemas e metodologias ágeis.</p>
+            <i class="fa-solid fa-code icon-about"></i>
+            <h3>Desenvolvimento Web</h3>
+            <p>Construção de interfaces responsivas, consumo de APIs e aplicações Full Stack.</p>
+          </div>
+          <div class="glass-card card-about">
+            <i class="fa-solid fa-network-wired icon-about"></i>
+            <h3>APIs & Banco de Dados</h3>
+            <p>Criação de serviços RESTful em Python/Node.js e modelagem relacional SQL.</p>
           </div>
           <div class="glass-card card-about">
             <i class="fa-solid fa-industry icon-about"></i>
             <h3>Visão de Processos</h3>
-            <p>Experiência prática em PCP, dados e otimização de fluxos operacionais.</p>
-          </div>
-          <div class="glass-card card-about">
-            <i class="fa-solid fa-rocket icon-about"></i>
-            <h3>Foco em Soluções</h3>
-            <p>Construção de produtos SaaS, ferramentas web e automações inteligentes.</p>
+            <p>Conhecimento prático em rotinas operacionais, PCP e otimização de fluxos.</p>
           </div>
         </div>
       </div>
@@ -175,28 +169,28 @@
       <h2><i class="fa-solid fa-diagram-project"></i> Projetos em Destaque</h2>
     </div>
 
-    <!-- PROJETO SAAS DESTAQUE MÁXIMO -->
+    <!-- PROJETO PRINCIPAL -->
     <div class="projeto-destaque-maximo glass-card" data-aos="fade-up">
-      <div class="destaque-badge">PROJETO PRINCIPAL (SaaS)</div>
+      <div class="destaque-badge">PROJETO PRINCIPAL</div>
       <div class="destaque-grid">
         <div class="destaque-img">
-          <img src="img/Software%20e%20Logsitica.jpeg" alt="Sistema WM SaaS">
+          <img src="img/Software%20e%20Logsitica.jpeg" alt="Sistema WM">
         </div>
         <div class="destaque-content">
-          <h3>Sistema WM — ERP & Gestão de Produção</h3>
+          <div class="status-project-tag"><i class="fa-solid fa-arrows-rotate"></i> Status: Em desenvolvimento</div>
+          <h3>Sistema WM — Gestão de Produção</h3>
           <p>
-            Plataforma SaaS desenvolvida para gestão completa de confecções industriais. Integra controle de PCP, gestão de terceiros/facções, controle de estoque e dashboards de produtividade em tempo real.
+            Sistema web em desenvolvimento para acompanhamento de ordens de produção, controle de etapas operacionais, rastreamento de insumos e geração de indicadores de eficiência para processos fabris.
           </p>
           <div class="tech-tags">
             <span>Node.js</span>
-            <span>PostgreSQL</span>
             <span>JavaScript</span>
+            <span>PostgreSQL</span>
             <span>Python / FastAPI</span>
-            <span>PWA</span>
+            <span>HTML/CSS</span>
           </div>
           <div class="projeto-actions">
-            <a href="https://github.com/WMSistemamostaco" target="_blank" class="btn-main">Ver Repositório <i class="fa-brands fa-github"></i></a>
-            <a href="#contato" class="btn-outline">Solicitar Demo</a>
+            <a href="https://github.com/WMSistemamostaco/sistem-wm" target="_blank" class="btn-main">Ver Repositório <i class="fa-brands fa-github"></i></a>
           </div>
         </div>
       </div>
@@ -206,126 +200,79 @@
     <div class="projetos-grid">
       <div class="glass-card projeto-card" data-aos="fade-up">
         <div class="projeto-thumb">
-          <img src="img/API%20LOGISTICA.jpeg" alt="API Logística">
+          <img src="img/PCP%20na%20Industria.jpeg" alt="Sistema de Controle de Produção">
         </div>
-        <h3>API REST de Gestão Logística</h3>
-        <p>Integração e microsserviço RESTful para acompanhamento de expedição, rastreamento de insumos e automação de status de entregas.</p>
+        <h3>Sistema de Controle de Produção</h3>
+        <p>Aplicação voltada para o monitoramento de ordens de fabricação, registro de paradas de linha e consolidação de dados operacionais.</p>
         <div class="tech-list-sm">
-          <span>Python</span><span>FastAPI</span><span>PostgreSQL</span>
+          <span>Python</span><span>Flask</span><span>PostgreSQL</span>
         </div>
         <div class="projeto-links">
-          <a href="https://github.com/WMSistemamostaco" target="_blank" class="btn-proj"><i class="fa-brands fa-github"></i> Código Fonte</a>
+          <a href="https://github.com/WMSistemamostaco/sistema-controle-producao" target="_blank" class="btn-proj"><i class="fa-brands fa-github"></i> Repositório</a>
         </div>
       </div>
 
       <div class="glass-card projeto-card" data-aos="fade-up" data-aos-delay="100">
         <div class="projeto-thumb">
-          <img src="img/PCP%20na%20Industria.jpeg" alt="Dashboard Industrial">
+          <img src="img/API%20LOGISTICA.jpeg" alt="Frontend do Sistema de Produção">
         </div>
-        <h3>Dashboard PCP Industrial</h3>
-        <p>Painel de controle com cálculo de KPIs de eficiência operacional (OEE), monitoramento de gargalos e metas de linha de produção.</p>
+        <h3>Frontend Sistema de Produção</h3>
+        <p>Interface web interativa para consulta de status de produção, filtros dinâmicos de pedidos e visualização de dashboards operacionais.</p>
         <div class="tech-list-sm">
-          <span>JavaScript</span><span>Node.js</span><span>SQL</span>
+          <span>JavaScript</span><span>HTML5</span><span>CSS3</span>
         </div>
         <div class="projeto-links">
-          <a href="https://github.com/WMSistemamostaco" target="_blank" class="btn-proj"><i class="fa-brands fa-github"></i> Código Fonte</a>
+          <a href="https://github.com/WMSistemamostaco/sistema-producao-frontend" target="_blank" class="btn-proj"><i class="fa-brands fa-github"></i> Repositório</a>
         </div>
       </div>
 
       <div class="glass-card projeto-card" data-aos="fade-up" data-aos-delay="200">
         <div class="projeto-thumb">
-          <img src="img/microsftware.jpeg" alt="Clone Corporativo">
+          <img src="img/microsftware.jpeg" alt="OuvidorÁgil">
         </div>
-        <h3>Portal Web & Interface Corporativa</h3>
-        <p>Aplicação web responsiva focada em padrões modernos de UI/UX, arquitetura limpa de CSS e otimização de performance.</p>
+        <h3>OuvidorÁgil — Gestão de Chamados</h3>
+        <p>Proposta de arquitetura de software para protocolo, acompanhamento e fluxo de resolução de solicitações operacionais e públicas.</p>
         <div class="tech-list-sm">
-          <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+          <span>PHP</span><span>MySQL</span><span>Bootstrap</span>
         </div>
         <div class="projeto-links">
-          <a href="https://github.com/WMSistemamostaco" target="_blank" class="btn-proj"><i class="fa-brands fa-github"></i> Código Fonte</a>
+          <a href="https://github.com/WMSistemamostaco" target="_blank" class="btn-proj"><i class="fa-brands fa-github"></i> GitHub Geral</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- JORNADA DA CARREIRA (TIMELINE) -->
-  <section id="jornada" class="jornada">
-    <div class="section-header" data-aos="fade-up">
-      <h2><i class="fa-solid fa-timeline"></i> Minha Trajetória</h2>
-    </div>
-
-    <div class="timeline">
-      <div class="timeline-item" data-aos="fade-right">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content glass-card">
-          <span class="timeline-date">2018 — 2024</span>
-          <h3>PCP, Logística & Otimização de Processos</h3>
-          <p>Atuação em análise de dados operacionais, controle de fluxos produtivos e melhoria contínua na indústria. Base prática do meu conhecimento de negócio.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item" data-aos="fade-left">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content glass-card">
-          <span class="timeline-date">2024</span>
-          <h3>Ingresso em Engenharia de Software</h3>
-          <p>Transição focada para o desenvolvimento de software, aprofundando em estrutura de dados, algoritmos e programação orientada a objetos.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item" data-aos="fade-right">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content glass-card">
-          <span class="timeline-date">2025</span>
-          <h3>APIs, Arquitetura & Ecossistema Full Stack</h3>
-          <p>Construção de APIs RESTful com Python (FastAPI/Flask), modelagem de dados SQL/NoSQL e desenvolvimento web com JavaScript e Node.js.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item" data-aos="fade-left">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content glass-card">
-          <span class="timeline-date">2026</span>
-          <h3>Desenvolvimento do Sistema WM SaaS</h3>
-          <p>Criação do sistema próprio de gestão empresarial e consolidação de portfólio focado no mercado de Londrina e oportunidades remotas.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS ANIMADAS -->
+  <!-- SKILLS TÉCNICAS -->
   <section id="skills" class="skills">
     <div class="section-header" data-aos="fade-up">
-      <h2><i class="fa-solid fa-code"></i> Stack Tecnológica</h2>
+      <h2><i class="fa-solid fa-code"></i> Habilidades Técnicas</h2>
     </div>
 
     <div class="skills-container">
-      <div class="skills-bars glass-card" data-aos="fade-right">
-        <h3>Habilidades Principais</h3>
-        
-        <div class="skill-progress">
-          <div class="skill-info"><span>Python (FastAPI / Scripts)</span><span>90%</span></div>
-          <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+      <div class="skills-cards-list glass-card" data-aos="fade-right">
+        <div class="skill-group">
+          <h3><i class="fa-brands fa-python"></i> Python</h3>
+          <p>FastAPI • Flask • APIs REST • scripts de automação • manipulação de dados</p>
         </div>
 
-        <div class="skill-progress">
-          <div class="skill-info"><span>JavaScript (ES6+ / Node.js)</span><span>85%</span></div>
-          <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+        <div class="skill-group">
+          <h3><i class="fa-brands fa-js"></i> JavaScript / Node.js</h3>
+          <p>ES6+ • manipulação do DOM • consumo de APIs • Node.js • Express</p>
         </div>
 
-        <div class="skill-progress">
-          <div class="skill-info"><span>PostgreSQL / SQL Server / MongoDB</span><span>80%</span></div>
-          <div class="progress-bar"><div class="progress-fill" style="width: 80%;"></div></div>
+        <div class="skill-group">
+          <h3><i class="fa-solid fa-database"></i> Banco de Dados (SQL)</h3>
+          <p>PostgreSQL • SQL Server • consultas avançadas • modelagem relacional</p>
         </div>
 
-        <div class="skill-progress">
-          <div class="skill-info"><span>HTML5 / CSS3 / Responsividade</span><span>90%</span></div>
-          <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+        <div class="skill-group">
+          <h3><i class="fa-brands fa-html5"></i> Web Frontend</h3>
+          <p>HTML5 • CSS3 • Flexbox/Grid • layouts responsivos • integração de UI</p>
         </div>
 
-        <div class="skill-progress">
-          <div class="skill-info"><span>Git / GitHub / CI/CD básico</span><span>85%</span></div>
-          <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+        <div class="skill-group">
+          <h3><i class="fa-brands fa-git-alt"></i> Ferramentas & DevOps</h3>
+          <p>Git • GitHub • Docker (básico) • VS Code • Postman / Insomnia</p>
         </div>
       </div>
 
@@ -343,72 +290,78 @@
     </div>
   </section>
 
-  <!-- CONTATO PREMIUM -->
+  <!-- JORNADA (TIMELINE) -->
+  <section id="jornada" class="jornada">
+    <div class="section-header" data-aos="fade-up">
+      <h2><i class="fa-solid fa-timeline"></i> Trajetória Profissional</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content glass-card">
+          <span class="timeline-date">2018 — 2024</span>
+          <h3>Análise de PCP & Processos Industriais</h3>
+          <p>Atuação focada no controle de rotinas fabris, análise de dados operacionais e otimização de fluxos produtivos. Base da visão de processos e regras de negócio.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content glass-card">
+          <span class="timeline-date">2024</span>
+          <h3>Graduação em Engenharia de Software</h3>
+          <p>Início dos estudos formais em algoritmos, estrutura de dados, modelagem de software, programação orientada a objetos e metodologias ágeis.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content glass-card">
+          <span class="timeline-date">2025</span>
+          <h3>APIs REST & Desenvolvimento Full Stack</h3>
+          <p>Construção de microsserviços e APIs com Python (FastAPI/Flask), manipulação de bancos de dados SQL/NoSQL e criação de interfaces web responsivas.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content glass-card">
+          <span class="timeline-date">2026</span>
+          <h3>Desenvolvimento do Sistema WM & Projetos</h3>
+          <p>Criação do Sistema WM e desenvolvimento contínuo de projetos voltados para gestão de produção, consolidando repositórios e práticas de engenharia de software.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
   <section id="contato" class="contato">
     <div class="contato-box glass-card" data-aos="zoom-in">
-      <h2>Vamos construir algo incrível juntos?</h2>
+      <h2>Vamos conversar?</h2>
       <p>
-        Estou disponível para oportunidades como **Desenvolvedor Full Stack Júnior/Pleno**, projetos web corporativos e parcerias em tecnologia.
+        Estou disponível para oportunidades em **Desenvolvimento de Software / Full Stack**, projetos web e posições de tecnologia.
       </p>
 
       <div class="botoes-redes">
-        <a href="mailto:wilianmostaco28@gmail.com" class="btn-rede"><i class="fa-solid fa-envelope"></i> Email</a>
+        <a href="mailto:wilianmostaco28@gmail.com" class="btn-rede"><i class="fa-solid fa-envelope"></i> E-mail</a>
         <a href="https://github.com/WMSistemamostaco" target="_blank" class="btn-rede"><i class="fa-brands fa-github"></i> GitHub</a>
         <a href="https://www.linkedin.com/in/wilian-mostaco/" target="_blank" class="btn-rede"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
         <a href="https://wa.me/5543988145521" target="_blank" class="btn-rede"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
       </div>
 
       <div class="contact-location">
-        📍 Londrina, Paraná — Brasil | Disponível para vagas presenciais, híbridas e remotas.
+        📍 Londrina — PR, Brasil | Disponível para oportunidades presenciais, híbridas e remotas.
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2026 Wilian Mostaço — Desenvolvido com Engenharia de Software e paixão por tecnologia.</p>
+    <p>© 2026 Wilian Mostaço — Desenvolvedor de Software</p>
   </footer>
 
   <!-- SCRIPTS -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="script.js"></script>
-  
-  <!-- Inicialização do Particles.js -->
-  <!-- Inicialização do Particles.js -->
-<script>
-  if (typeof particlesJS !== 'undefined') {
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 75, "density": { "enable": true, "value_area": 800 } },
-        "color": { "value": "#00f0ff" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.5, "random": false },
-        "size": { "value": 3, "random": true },
-        "line_linked": { "enable": true, "distance": 140, "color": "#00f0ff", "opacity": 0.25, "width": 1 },
-        "move": { "enable": true, "speed": 1.8, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
-      },
-      "interactivity": {
-        "detect_on": "window",
-        "events": {
-          "onhover": { 
-            "enable": true, 
-            "mode": "repulse" /* Ativa o efeito de repelir/afastar */
-          }, 
-          "onclick": { "enable": true, "mode": "push" }, 
-          "resize": true 
-        },
-        "modes": {
-          "repulse": {
-            "distance": 80,  /* Distância menor de repulsão do mouse */
-            "duration": 0.4
-          }
-        }
-      },
-      "retina_detect": true
-    });
-  }
-</script>
-<!-- SCRIPTS EXISTENTES -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="script.js"></script>
   
@@ -447,7 +400,32 @@
     }
   </script>
 
-  <!-- NOVO SCRIPT: Rastro Neon Estrela Cadente -->
+  <!-- Script do Menu Mobile -->
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    const menuLinks = document.querySelectorAll('.menu a');
+
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        if (navMenu.classList.contains('active')) {
+          menuToggle.innerHTML = '&#10005;';
+        } else {
+          menuToggle.innerHTML = '<i class="fa-solid fa-bars">&#9776;</i>';
+        }
+      });
+
+      menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+          menuToggle.innerHTML = '<i class="fa-solid fa-bars">&#9776;</i>';
+        });
+      });
+    }
+  </script>
+
+  <!-- Script do Rastro Neon Estrela Cadente -->
   <script>
     let lastX = 0;
     let lastY = 0;
@@ -476,54 +454,6 @@
       }
     });
   </script>
-<!-- Script do Contador Animado -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const counters = document.querySelectorAll('.counter');
-    counters.forEach(counter => {
-      const target = +counter.getAttribute('data-target');
-      let count = 0;
-      const speed = 50; // velocidade da contagem
 
-      const updateCount = () => {
-        const increment = Math.ceil(target / speed);
-        if (count < target) {
-          count += increment;
-          if (count > target) count = target;
-          counter.innerText = count;
-          setTimeout(updateCount, 40);
-        } else {
-          counter.innerText = target;
-        }
-      };
-
-      updateCount();
-    });
-  });
-</script>
-  <!-- Script do Menu Mobile -->
-<script>
-  const menuToggle = document.getElementById('menuToggle');
-  const navMenu = document.getElementById('navMenu');
-  const menuLinks = document.querySelectorAll('.menu a');
-
-  if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      if (navMenu.classList.contains('active')) {
-        menuToggle.innerHTML = '&#10005;'; // Ícone de Fechar (X)
-      } else {
-        menuToggle.innerHTML = '<i class="fa-solid fa-bars">&#9776;</i>'; // Ícone de Menu (☰)
-      }
-    });
-
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        menuToggle.innerHTML = '<i class="fa-solid fa-bars">&#9776;</i>';
-      });
-    });
-  }
-</script>
 </body>
 </html>
