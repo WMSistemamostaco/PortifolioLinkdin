@@ -68,3 +68,30 @@ particlesJS("particles-js", {
   },
   "retina_detect": true
 });
+// Força a página a rolar para o topo ao recarregar
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+window.addEventListener('beforeunload', () => {
+  window.scrollTo(0, 0);
+});
+
+// Inicialização das Animações AOS
+document.addEventListener('DOMContentLoaded', () => {
+  // Limpa o fragmento # da URL sem recarregar a página
+  if (window.location.hash) {
+    history.replaceState(null, null, window.location.pathname);
+  }
+  
+  // Rola para o topo
+  window.scrollTo(0, 0);
+
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-in-out'
+    });
+  }
+});
