@@ -1,7 +1,7 @@
 "use strict";
 
 /* =========================================================
-   WM PORTFOLIO V3
+   WM PORTFOLIO V4
    Wilian Mostaço
    ========================================================= */
 
@@ -11,66 +11,72 @@
    ========================================================= */
 
 const header =
-    document.getElementById("header");
+    document.getElementById("site-header");
 
 const menuToggle =
     document.getElementById("menu-toggle");
 
-const mainNav =
-    document.getElementById("main-nav");
+const mainNavigation =
+    document.getElementById("main-navigation");
 
 const backToTop =
     document.getElementById("back-to-top");
 
-const yearElement =
-    document.getElementById("year");
+const currentYear =
+    document.getElementById("current-year");
 
 const typedText =
     document.getElementById("typed-text");
 
-const profileImage =
-    document.getElementById("profile-image");
+const devImage =
+    document.getElementById("profile-dev-image");
 
-const profileRing =
-    document.querySelector(".profile-ring");
+const devPhoto =
+    document.querySelector(".profile-dev");
+
+const socialImage =
+    document.getElementById("profile-social-image");
+
+const mouseGlow =
+    document.getElementById("mouse-glow");
 
 const canvas =
     document.getElementById("particles-canvas");
 
 
 /* =========================================================
-   ANO ATUAL
+   ANO
    ========================================================= */
 
-if (yearElement) {
+if (currentYear) {
 
-    yearElement.textContent =
+    currentYear.textContent =
         new Date().getFullYear();
 
 }
 
 
 /* =========================================================
-   HEADER AO ROLAR
+   HEADER + BACK TO TOP
    ========================================================= */
 
-function updateHeader() {
+function updatePageState() {
 
-    if (!header) {
-        return;
-    }
+    if (header) {
 
-    if (window.scrollY > 24) {
+        if (window.scrollY > 24) {
 
-        header.classList.add(
-            "scrolled"
-        );
+            header.classList.add(
+                "scrolled"
+            );
 
-    } else {
+        } else {
 
-        header.classList.remove(
-            "scrolled"
-        );
+            header.classList.remove(
+                "scrolled"
+            );
+
+        }
 
     }
 
@@ -98,13 +104,13 @@ function updateHeader() {
 
 window.addEventListener(
     "scroll",
-    updateHeader,
+    updatePageState,
     {
         passive: true
     }
 );
 
-updateHeader();
+updatePageState();
 
 
 /* =========================================================
@@ -113,26 +119,22 @@ updateHeader();
 
 function closeMenu() {
 
-    if (!menuToggle || !mainNav) {
+    if (!menuToggle || !mainNavigation) {
         return;
     }
-
 
     menuToggle.classList.remove(
         "active"
     );
 
-
-    mainNav.classList.remove(
+    mainNavigation.classList.remove(
         "open"
     );
-
 
     menuToggle.setAttribute(
         "aria-expanded",
         "false"
     );
-
 
     document.body.classList.remove(
         "menu-open"
@@ -143,32 +145,28 @@ function closeMenu() {
 
 function toggleMenu() {
 
-    if (!menuToggle || !mainNav) {
+    if (!menuToggle || !mainNavigation) {
         return;
     }
 
-
-    const opened =
-        mainNav.classList.toggle(
+    const open =
+        mainNavigation.classList.toggle(
             "open"
         );
 
-
     menuToggle.classList.toggle(
         "active",
-        opened
+        open
     );
-
 
     menuToggle.setAttribute(
         "aria-expanded",
-        String(opened)
+        String(open)
     );
-
 
     document.body.classList.toggle(
         "menu-open",
-        opened
+        open
     );
 
 }
@@ -185,9 +183,7 @@ if (menuToggle) {
 
 
 document
-    .querySelectorAll(
-        ".main-nav a"
-    )
+    .querySelectorAll(".main-navigation a")
     .forEach(
         (link) => {
 
@@ -214,8 +210,44 @@ window.addEventListener(
 );
 
 
+document.addEventListener(
+    "click",
+    (event) => {
+
+        if (
+            !mainNavigation ||
+            !mainNavigation.classList.contains(
+                "open"
+            )
+        ) {
+            return;
+        }
+
+        const clickInsideMenu =
+            mainNavigation.contains(
+                event.target
+            );
+
+        const clickToggle =
+            menuToggle.contains(
+                event.target
+            );
+
+        if (
+            !clickInsideMenu &&
+            !clickToggle
+        ) {
+
+            closeMenu();
+
+        }
+
+    }
+);
+
+
 /* =========================================================
-   VOLTAR AO TOPO
+   BACK TO TOP
    ========================================================= */
 
 if (backToTop) {
@@ -225,8 +257,13 @@ if (backToTop) {
         () => {
 
             window.scrollTo({
-                top: 0,
-                behavior: "smooth"
+
+                top:
+                    0,
+
+                behavior:
+                    "smooth"
+
             });
 
         }
@@ -236,7 +273,7 @@ if (backToTop) {
 
 
 /* =========================================================
-   REVEAL ON SCROLL
+   REVEAL
    ========================================================= */
 
 const revealElements =
@@ -245,14 +282,14 @@ const revealElements =
     );
 
 
-const reducedMotion =
+const prefersReducedMotion =
     window.matchMedia(
         "(prefers-reduced-motion: reduce)"
     ).matches;
 
 
 if (
-    reducedMotion ||
+    prefersReducedMotion ||
     !("IntersectionObserver" in window)
 ) {
 
@@ -284,11 +321,9 @@ if (
                             return;
                         }
 
-
                         entry.target.classList.add(
                             "visible"
                         );
-
 
                         observer.unobserve(
                             entry.target
@@ -299,7 +334,9 @@ if (
 
             },
             {
-                threshold: 0.12,
+                threshold:
+                    0.12,
+
                 rootMargin:
                     "0px 0px -45px 0px"
             }
@@ -325,21 +362,24 @@ if (
 
 const typingWords = [
 
+    "Sistema WM",
     "Sistemas Web",
     "APIs REST",
     "Python + FastAPI",
     "JavaScript + Node.js",
-    "Automação de processos",
-    "Sistema WM"
+    "Automação de processos"
 
 ];
 
 
-let currentWordIndex = 0;
+let typingWordIndex =
+    0;
 
-let currentCharacter = 0;
+let typingCharacterIndex =
+    0;
 
-let deleting = false;
+let typingDeleting =
+    false;
 
 
 function typeWriter() {
@@ -349,35 +389,35 @@ function typeWriter() {
     }
 
 
-    const word =
+    const currentWord =
         typingWords[
-            currentWordIndex
+            typingWordIndex
         ];
 
 
-    if (!deleting) {
+    if (!typingDeleting) {
 
-        currentCharacter++;
+        typingCharacterIndex++;
 
 
         typedText.textContent =
-            word.slice(
+            currentWord.slice(
                 0,
-                currentCharacter
+                typingCharacterIndex
             );
 
 
         if (
-            currentCharacter >=
-            word.length
+            typingCharacterIndex >=
+            currentWord.length
         ) {
 
-            deleting =
+            typingDeleting =
                 true;
 
             setTimeout(
                 typeWriter,
-                1500
+                1400
             );
 
             return;
@@ -386,26 +426,26 @@ function typeWriter() {
 
     } else {
 
-        currentCharacter--;
+        typingCharacterIndex--;
 
 
         typedText.textContent =
-            word.slice(
+            currentWord.slice(
                 0,
-                currentCharacter
+                typingCharacterIndex
             );
 
 
         if (
-            currentCharacter <= 0
+            typingCharacterIndex <= 0
         ) {
 
-            deleting =
+            typingDeleting =
                 false;
 
-            currentWordIndex =
+            typingWordIndex =
                 (
-                    currentWordIndex + 1
+                    typingWordIndex + 1
                 ) %
                 typingWords.length;
 
@@ -416,9 +456,9 @@ function typeWriter() {
 
     setTimeout(
         typeWriter,
-        deleting
-            ? 42
-            : 76
+        typingDeleting
+            ? 38
+            : 75
     );
 
 }
@@ -426,7 +466,7 @@ function typeWriter() {
 
 if (typedText) {
 
-    if (reducedMotion) {
+    if (prefersReducedMotion) {
 
         typedText.textContent =
             typingWords[0];
@@ -444,39 +484,57 @@ if (typedText) {
 
 
 /* =========================================================
-   IMAGEM DE PERFIL
+   FOTOS
    ========================================================= */
 
-if (profileImage) {
+function activateImage(
+    image,
+    wrapper
+) {
 
-    profileImage.addEventListener(
-        "load",
+    if (!image || !wrapper) {
+        return;
+    }
+
+
+    const markLoaded =
         () => {
 
             if (
-                profileImage.naturalWidth >
+                image.naturalWidth >
                 0
             ) {
 
-                profileRing?.classList.add(
+                wrapper.classList.add(
                     "loaded"
                 );
 
             }
 
-        }
+        };
+
+
+    if (
+        image.complete &&
+        image.naturalWidth > 0
+    ) {
+
+        markLoaded();
+
+    }
+
+
+    image.addEventListener(
+        "load",
+        markLoaded
     );
 
 
-    profileImage.addEventListener(
+    image.addEventListener(
         "error",
         () => {
 
-            profileImage.style.display =
-                "none";
-
-
-            profileRing?.classList.remove(
+            wrapper.classList.remove(
                 "loaded"
             );
 
@@ -486,8 +544,32 @@ if (profileImage) {
 }
 
 
+activateImage(
+    devImage,
+    devPhoto
+);
+
+
+/* Foto social: só garantir que carregou */
+
+if (socialImage) {
+
+    socialImage.addEventListener(
+        "error",
+        () => {
+
+            console.warn(
+                "Não foi possível carregar a foto social."
+            );
+
+        }
+    );
+
+}
+
+
 /* =========================================================
-   LINKS INTERNOS SUAVES
+   LINKS INTERNOS
    ========================================================= */
 
 document
@@ -499,10 +581,10 @@ document
 
             anchor.addEventListener(
                 "click",
-                function (event) {
+                (event) => {
 
                     const targetId =
-                        this.getAttribute(
+                        anchor.getAttribute(
                             "href"
                         );
 
@@ -540,14 +622,17 @@ document
                             .top +
                         window.scrollY -
                         headerHeight -
-                        12;
+                        10;
 
 
                     window.scrollTo({
+
                         top:
                             targetPosition,
+
                         behavior:
                             "smooth"
+
                     });
 
                 }
@@ -558,127 +643,299 @@ document
 
 
 /* =========================================================
-   FECHA MENU AO CLICAR FORA
+   MOUSE GLOW
    ========================================================= */
 
-document.addEventListener(
-    "click",
-    (event) => {
+if (
+    mouseGlow &&
+    !prefersReducedMotion
+) {
 
-        if (
-            !mainNav ||
-            !menuToggle
-        ) {
-            return;
+    let glowX =
+        window.innerWidth / 2;
+
+    let glowY =
+        window.innerHeight / 2;
+
+    let targetX =
+        glowX;
+
+    let targetY =
+        glowY;
+
+
+    window.addEventListener(
+        "mousemove",
+        (event) => {
+
+            targetX =
+                event.clientX;
+
+            targetY =
+                event.clientY;
+
+            mouseGlow.style.opacity =
+                "1";
+
+        },
+        {
+            passive: true
         }
+    );
 
 
-        if (
-            !mainNav.classList.contains(
-                "open"
-            )
-        ) {
-            return;
-        }
+    window.addEventListener(
+        "mouseleave",
+        () => {
 
-
-        const clickedInsideMenu =
-            mainNav.contains(
-                event.target
-            );
-
-
-        const clickedToggle =
-            menuToggle.contains(
-                event.target
-            );
-
-
-        if (
-            !clickedInsideMenu &&
-            !clickedToggle
-        ) {
-
-            closeMenu();
+            mouseGlow.style.opacity =
+                "0";
 
         }
+    );
+
+
+    function animateGlow() {
+
+        glowX +=
+            (
+                targetX -
+                glowX
+            ) *
+            0.13;
+
+
+        glowY +=
+            (
+                targetY -
+                glowY
+            ) *
+            0.13;
+
+
+        mouseGlow.style.transform =
+            `translate(
+                ${glowX}px,
+                ${glowY}px
+            ) translate(-50%, -50%)`;
+
+
+        requestAnimationFrame(
+            animateGlow
+        );
 
     }
-);
+
+
+    animateGlow();
+
+}
+
+
+/* =========================================================
+   TILT DOS CARDS
+   ========================================================= */
+
+const tiltCards =
+    document.querySelectorAll(
+        "[data-tilt='true']"
+    );
+
+
+if (
+    !prefersReducedMotion &&
+    window.innerWidth > 820 &&
+    tiltCards.length
+) {
+
+    tiltCards.forEach(
+        (card) => {
+
+            card.addEventListener(
+                "mousemove",
+                (event) => {
+
+                    const rect =
+                        card.getBoundingClientRect();
+
+
+                    const x =
+                        event.clientX -
+                        rect.left;
+
+
+                    const y =
+                        event.clientY -
+                        rect.top;
+
+
+                    const centerX =
+                        rect.width / 2;
+
+
+                    const centerY =
+                        rect.height / 2;
+
+
+                    const rotateY =
+                        (
+                            x -
+                            centerX
+                        ) /
+                        centerX *
+                        3.5;
+
+
+                    const rotateX =
+                        (
+                            centerY -
+                            y
+                        ) /
+                        centerY *
+                        3.5;
+
+
+                    card.style.transform =
+                        `perspective(1000px)
+                         rotateX(${rotateX}deg)
+                         rotateY(${rotateY}deg)
+                         translateY(-4px)`;
+
+                }
+            );
+
+
+            card.addEventListener(
+                "mouseleave",
+                () => {
+
+                    card.style.transform =
+                        "";
+
+                }
+            );
+
+        }
+    );
+
+}
 
 
 /* =========================================================
    PARTÍCULAS
-   SEM BIBLIOTECA EXTERNA
    ========================================================= */
 
 if (
     canvas &&
-    !reducedMotion
+    !prefersReducedMotion
 ) {
 
-    const context =
+    const ctx =
         canvas.getContext("2d");
 
 
-    let particles = [];
+    let particles =
+        [];
 
-    let canvasWidth = 0;
+    let width =
+        window.innerWidth;
 
-    let canvasHeight = 0;
+    let height =
+        window.innerHeight;
 
-    let animationId = null;
+    let animationFrame =
+        null;
 
+
+    /* ------------------------------------------
+       MOUSE
+    ------------------------------------------- */
 
     const mouse = {
 
-        x: null,
+        x:
+            null,
 
-        y: null,
+        y:
+            null,
 
-        radius: 130
+        radius:
+            175
 
     };
 
 
+    /* ------------------------------------------
+       CONFIGURAÇÃO
+    ------------------------------------------- */
+
+    const settings = {
+
+        desktopParticles:
+            95,
+
+        mobileParticles:
+            43,
+
+        maxDistance:
+            145,
+
+        baseSpeed:
+            0.42,
+
+        maxSpeed:
+            1.15,
+
+        mouseForce:
+            2.8
+
+    };
+
+
+    /* =================================================
+       RESIZE
+       ================================================= */
+
     function resizeCanvas() {
 
-        const ratio =
+        const pixelRatio =
             Math.min(
                 window.devicePixelRatio || 1,
                 2
             );
 
 
-        canvasWidth =
+        width =
             window.innerWidth;
 
 
-        canvasHeight =
+        height =
             window.innerHeight;
 
 
         canvas.width =
-            canvasWidth * ratio;
+            width *
+            pixelRatio;
 
 
         canvas.height =
-            canvasHeight * ratio;
+            height *
+            pixelRatio;
 
 
         canvas.style.width =
-            `${canvasWidth}px`;
+            `${width}px`;
 
 
         canvas.style.height =
-            `${canvasHeight}px`;
+            `${height}px`;
 
 
-        context.setTransform(
-            ratio,
+        ctx.setTransform(
+            pixelRatio,
             0,
             0,
-            ratio,
+            pixelRatio,
             0,
             0
         );
@@ -689,15 +946,20 @@ if (
     }
 
 
+    /* =================================================
+       CRIA PARTICULAS
+       ================================================= */
+
     function createParticles() {
 
         const amount =
-            canvasWidth < 700
-                ? 24
-                : 55;
+            width <= 700
+                ? settings.mobileParticles
+                : settings.desktopParticles;
 
 
-        particles = [];
+        particles =
+            [];
 
 
         for (
@@ -710,35 +972,35 @@ if (
 
                 x:
                     Math.random() *
-                    canvasWidth,
+                    width,
 
                 y:
                     Math.random() *
-                    canvasHeight,
-
-                size:
-                    Math.random() *
-                    1.7 +
-                    0.4,
+                    height,
 
                 vx:
                     (
                         Math.random() -
                         0.5
                     ) *
-                    0.22,
+                    settings.baseSpeed,
 
                 vy:
                     (
                         Math.random() -
                         0.5
                     ) *
-                    0.22,
+                    settings.baseSpeed,
+
+                size:
+                    Math.random() *
+                    1.8 +
+                    0.65,
 
                 alpha:
                     Math.random() *
-                    0.35 +
-                    0.08
+                    0.45 +
+                    0.15
 
             });
 
@@ -747,180 +1009,273 @@ if (
     }
 
 
-    function drawParticles() {
+    /* =================================================
+       ATUALIZA PARTICULA
+       ================================================= */
 
-        context.clearRect(
-            0,
-            0,
-            canvasWidth,
-            canvasHeight
-        );
+    function updateParticle(
+        particle
+    ) {
 
+        /* Movimento contínuo */
 
-        particles.forEach(
-            (particle) => {
-
-                particle.x +=
-                    particle.vx;
+        particle.x +=
+            particle.vx;
 
 
-                particle.y +=
-                    particle.vy;
+        particle.y +=
+            particle.vy;
 
 
-                if (
-                    particle.x <
-                    -10
-                ) {
+        /* ------------------------------------------
+           ENVOLVE A TELA
+        ------------------------------------------- */
 
-                    particle.x =
-                        canvasWidth +
-                        10;
+        if (
+            particle.x <
+            -20
+        ) {
 
-                }
+            particle.x =
+                width + 20;
 
-
-                if (
-                    particle.x >
-                    canvasWidth +
-                    10
-                ) {
-
-                    particle.x =
-                        -10;
-
-                }
+        }
 
 
-                if (
-                    particle.y <
-                    -10
-                ) {
+        if (
+            particle.x >
+            width + 20
+        ) {
 
-                    particle.y =
-                        canvasHeight +
-                        10;
+            particle.x =
+                -20;
 
-                }
-
-
-                if (
-                    particle.y >
-                    canvasHeight +
-                    10
-                ) {
-
-                    particle.y =
-                        -10;
-
-                }
+        }
 
 
-                /* INTERAÇÃO COM MOUSE */
+        if (
+            particle.y <
+            -20
+        ) {
 
-                if (
-                    mouse.x !== null &&
-                    mouse.y !== null
-                ) {
+            particle.y =
+                height + 20;
 
-                    const dx =
-                        mouse.x -
-                        particle.x;
-
-
-                    const dy =
-                        mouse.y -
-                        particle.y;
+        }
 
 
-                    const distance =
-                        Math.sqrt(
-                            dx * dx +
-                            dy * dy
-                        );
+        if (
+            particle.y >
+            height + 20
+        ) {
+
+            particle.y =
+                -20;
+
+        }
 
 
-                    if (
-                        distance <
-                        mouse.radius
-                    ) {
+        /* ==========================================
+           REPULSÃO DO MOUSE
+        =========================================== */
 
-                        const force =
-                            (
-                                mouse.radius -
-                                distance
-                            ) /
-                            mouse.radius;
+        if (
+            mouse.x !== null &&
+            mouse.y !== null
+        ) {
 
-
-                        particle.x -=
-                            dx *
-                            force *
-                            0.0025;
+            const dx =
+                particle.x -
+                mouse.x;
 
 
-                        particle.y -=
-                            dy *
-                            force *
-                            0.0025;
-
-                    }
-
-                }
+            const dy =
+                particle.y -
+                mouse.y;
 
 
-                context.beginPath();
-
-
-                context.arc(
-                    particle.x,
-                    particle.y,
-                    particle.size,
-                    0,
-                    Math.PI * 2
+            const distance =
+                Math.sqrt(
+                    dx * dx +
+                    dy * dy
                 );
 
 
-                context.fillStyle =
-                    `rgba(96,165,250,${particle.alpha})`;
+            if (
+                distance <
+                mouse.radius &&
+                distance >
+                0.01
+            ) {
+
+                const directionX =
+                    dx /
+                    distance;
 
 
-                context.fill();
+                const directionY =
+                    dy /
+                    distance;
+
+
+                /*
+                 * 0 = borda do campo
+                 * 1 = exatamente no mouse
+                 */
+
+                const intensity =
+                    1 -
+                    (
+                        distance /
+                        mouse.radius
+                    );
+
+
+                /*
+                 * Força principal de
+                 * afastamento.
+                 */
+
+                const force =
+                    intensity *
+                    settings.mouseForce;
+
+
+                particle.x +=
+                    directionX *
+                    force;
+
+
+                particle.y +=
+                    directionY *
+                    force;
+
+
+                /*
+                 * Dá impulso ao movimento.
+                 */
+
+                particle.vx +=
+                    directionX *
+                    intensity *
+                    0.035;
+
+
+                particle.vy +=
+                    directionY *
+                    intensity *
+                    0.035;
 
             }
+
+        }
+
+
+        /* ------------------------------------------
+           LIMITA VELOCIDADE
+        ------------------------------------------- */
+
+        particle.vx =
+            Math.max(
+                -settings.maxSpeed,
+                Math.min(
+                    settings.maxSpeed,
+                    particle.vx
+                )
+            );
+
+
+        particle.vy =
+            Math.max(
+                -settings.maxSpeed,
+                Math.min(
+                    settings.maxSpeed,
+                    particle.vy
+                )
+            );
+
+    }
+
+
+    /* =================================================
+       DESENHA PARTICULA
+       ================================================= */
+
+    function drawParticle(
+        particle
+    ) {
+
+        ctx.beginPath();
+
+
+        ctx.arc(
+            particle.x,
+            particle.y,
+            particle.size,
+            0,
+            Math.PI * 2
         );
 
 
-        /* LINHAS */
+        ctx.fillStyle =
+            `rgba(
+                96,
+                165,
+                250,
+                ${particle.alpha}
+            )`;
+
+
+        ctx.shadowBlur =
+            9;
+
+
+        ctx.shadowColor =
+            "rgba(59,130,246,0.55)";
+
+
+        ctx.fill();
+
+
+        ctx.shadowBlur =
+            0;
+
+    }
+
+
+    /* =================================================
+       LINHAS ENTRE PARTICULAS
+       ================================================= */
+
+    function drawConnections() {
 
         for (
-            let index = 0;
-            index < particles.length;
-            index++
+            let i = 0;
+            i < particles.length;
+            i++
         ) {
 
             for (
-                let second = index + 1;
-                second < particles.length;
-                second++
+                let j = i + 1;
+                j < particles.length;
+                j++
             ) {
 
-                const firstParticle =
-                    particles[index];
+                const a =
+                    particles[i];
 
-
-                const secondParticle =
-                    particles[second];
+                const b =
+                    particles[j];
 
 
                 const dx =
-                    firstParticle.x -
-                    secondParticle.x;
+                    a.x -
+                    b.x;
 
 
                 const dy =
-                    firstParticle.y -
-                    secondParticle.y;
+                    a.y -
+                    b.y;
 
 
                 const distance =
@@ -931,41 +1286,50 @@ if (
 
 
                 if (
-                    distance < 125
+                    distance <
+                    settings.maxDistance
                 ) {
 
                     const opacity =
                         (
                             1 -
-                            distance / 125
+                            (
+                                distance /
+                                settings.maxDistance
+                            )
                         ) *
-                        0.1;
+                        0.16;
 
 
-                    context.beginPath();
+                    ctx.beginPath();
 
 
-                    context.moveTo(
-                        firstParticle.x,
-                        firstParticle.y
+                    ctx.moveTo(
+                        a.x,
+                        a.y
                     );
 
 
-                    context.lineTo(
-                        secondParticle.x,
-                        secondParticle.y
+                    ctx.lineTo(
+                        b.x,
+                        b.y
                     );
 
 
-                    context.strokeStyle =
-                        `rgba(96,165,250,${opacity})`;
+                    ctx.strokeStyle =
+                        `rgba(
+                            96,
+                            165,
+                            250,
+                            ${opacity}
+                        )`;
 
 
-                    context.lineWidth =
-                        1;
+                    ctx.lineWidth =
+                        0.65;
 
 
-                    context.stroke();
+                    ctx.stroke();
 
                 }
 
@@ -973,20 +1337,124 @@ if (
 
         }
 
+    }
 
-        animationId =
+
+    /* =================================================
+       CAMPO VISUAL DO MOUSE
+       ================================================= */
+
+    function drawMouseField() {
+
+        if (
+            mouse.x === null ||
+            mouse.y === null
+        ) {
+
+            return;
+
+        }
+
+
+        const gradient =
+            ctx.createRadialGradient(
+
+                mouse.x,
+                mouse.y,
+                0,
+
+                mouse.x,
+                mouse.y,
+                mouse.radius
+
+            );
+
+
+        gradient.addColorStop(
+            0,
+            "rgba(59,130,246,0.07)"
+        );
+
+
+        gradient.addColorStop(
+            0.35,
+            "rgba(59,130,246,0.035)"
+        );
+
+
+        gradient.addColorStop(
+            1,
+            "rgba(59,130,246,0)"
+        );
+
+
+        ctx.beginPath();
+
+
+        ctx.arc(
+            mouse.x,
+            mouse.y,
+            mouse.radius,
+            0,
+            Math.PI * 2
+        );
+
+
+        ctx.fillStyle =
+            gradient;
+
+
+        ctx.fill();
+
+    }
+
+
+    /* =================================================
+       ANIMAÇÃO
+       ================================================= */
+
+    function animateParticles() {
+
+        ctx.clearRect(
+            0,
+            0,
+            width,
+            height
+        );
+
+
+        particles.forEach(
+            (particle) => {
+
+                updateParticle(
+                    particle
+                );
+
+
+                drawParticle(
+                    particle
+                );
+
+            }
+        );
+
+
+        drawConnections();
+
+        drawMouseField();
+
+
+        animationFrame =
             requestAnimationFrame(
-                drawParticles
+                animateParticles
             );
 
     }
 
 
-    window.addEventListener(
-        "resize",
-        resizeCanvas
-    );
-
+    /* =================================================
+       MOUSE
+       ================================================= */
 
     window.addEventListener(
         "mousemove",
@@ -1000,7 +1468,8 @@ if (
 
         },
         {
-            passive: true
+            passive:
+                true
         }
     );
 
@@ -1019,14 +1488,66 @@ if (
     );
 
 
-    resizeCanvas();
+    /* =================================================
+       TOUCH
+       ================================================= */
 
-    drawParticles();
+    window.addEventListener(
+        "touchmove",
+        (event) => {
+
+            if (
+                !event.touches ||
+                !event.touches.length
+            ) {
+
+                return;
+
+            }
 
 
-    /* =====================================================
-       ECONOMIA DE RECURSOS QUANDO A ABA FICA INVISÍVEL
-       ===================================================== */
+            mouse.x =
+                event.touches[0].clientX;
+
+
+            mouse.y =
+                event.touches[0].clientY;
+
+        },
+        {
+            passive:
+                true
+        }
+    );
+
+
+    window.addEventListener(
+        "touchend",
+        () => {
+
+            mouse.x =
+                null;
+
+            mouse.y =
+                null;
+
+        }
+    );
+
+
+    /* =================================================
+       RESIZE
+       ================================================= */
+
+    window.addEventListener(
+        "resize",
+        resizeCanvas
+    );
+
+
+    /* =================================================
+       ECONOMIA DE RECURSOS
+       ================================================= */
 
     document.addEventListener(
         "visibilitychange",
@@ -1037,14 +1558,14 @@ if (
             ) {
 
                 if (
-                    animationId
+                    animationFrame
                 ) {
 
                     cancelAnimationFrame(
-                        animationId
+                        animationFrame
                     );
 
-                    animationId =
+                    animationFrame =
                         null;
 
                 }
@@ -1052,10 +1573,10 @@ if (
             } else {
 
                 if (
-                    !animationId
+                    !animationFrame
                 ) {
 
-                    drawParticles();
+                    animateParticles();
 
                 }
 
@@ -1064,26 +1585,22 @@ if (
         }
     );
 
+
+    /* =================================================
+       START
+       ================================================= */
+
+    resizeCanvas();
+
+    animateParticles();
+
 }
 
 
 /* =========================================================
-   PROTEÇÃO CONTRA ERROS
+   LOG
    ========================================================= */
 
-window.addEventListener(
-    "error",
-    (event) => {
-
-        /*
-         * Evita que um erro visual isolado
-         * derrube a experiência inteira.
-         */
-
-        console.warn(
-            "Portfolio:",
-            event.message
-        );
-
-    }
+console.log(
+    "WM Portfolio V4 carregado."
 );
