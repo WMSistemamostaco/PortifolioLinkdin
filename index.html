@@ -12,7 +12,7 @@
 
     <meta
         name="description"
-        content="Portfólio de Wilian Mostaço, Desenvolvedor de Software e estudante de Engenharia de Software. Sistemas web, APIs REST, automação e soluções de gestão."
+        content="Portfólio de Wilian Mostaço, Desenvolvedor de Software e estudante de Engenharia de Software. Sistemas web, APIs REST, automação e soluções para gestão."
     >
 
     <meta
@@ -35,7 +35,7 @@
         content="#050914"
     >
 
-    <!-- OPEN GRAPH -->
+    <!-- Open Graph -->
     <meta
         property="og:type"
         content="website"
@@ -48,7 +48,7 @@
 
     <meta
         property="og:description"
-        content="Sistemas web, APIs REST, automação e soluções de gestão."
+        content="Sistemas web, APIs REST, automação e soluções para gestão."
     >
 
     <meta
@@ -62,21 +62,11 @@
     >
 
     <meta
-        property="og:image:width"
-        content="1200"
-    >
-
-    <meta
-        property="og:image:height"
-        content="630"
-    >
-
-    <meta
         property="og:locale"
         content="pt_BR"
     >
 
-    <!-- TWITTER / X -->
+    <!-- Twitter / X -->
     <meta
         name="twitter:card"
         content="summary_large_image"
@@ -89,7 +79,7 @@
 
     <meta
         name="twitter:description"
-        content="Sistemas web, APIs REST, automação e soluções de gestão."
+        content="Sistemas web, APIs REST, automação e soluções para gestão."
     >
 
     <meta
@@ -106,7 +96,7 @@
         Wilian Mostaço | Desenvolvedor de Software
     </title>
 
-    <!-- FONTES -->
+    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link
@@ -120,15 +110,13 @@
         rel="stylesheet"
     >
 
-    <!-- CSS -->
     <link
         rel="stylesheet"
         href="styles.css"
     >
 
-    <!-- DADOS ESTRUTURADOS -->
+    <!-- Dados estruturados -->
     <script type="application/ld+json">
-
     {
         "@context": "https://schema.org",
         "@type": "Person",
@@ -146,7 +134,6 @@
             "addressCountry": "BR"
         }
     }
-
     </script>
 
 </head>
@@ -154,33 +141,41 @@
 
 <body>
 
-    <!-- ========================================
-         FUNDO
-    ========================================= -->
+    <!-- ==========================================
+         FUNDO ANIMADO
+    =========================================== -->
 
     <canvas
         id="particles-canvas"
         aria-hidden="true"
     ></canvas>
 
+
     <div
-        class="background-glow glow-left"
+        class="page-glow glow-left"
         aria-hidden="true"
     ></div>
 
     <div
-        class="background-glow glow-right"
+        class="page-glow glow-right"
         aria-hidden="true"
     ></div>
 
 
-    <!-- ========================================
+    <div
+        class="mouse-glow"
+        id="mouse-glow"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- ==========================================
          HEADER
-    ========================================= -->
+    =========================================== -->
 
     <header
         class="site-header"
-        id="header"
+        id="site-header"
     >
 
         <div class="container nav-container">
@@ -188,7 +183,7 @@
             <a
                 href="#inicio"
                 class="brand"
-                aria-label="Ir para o início"
+                aria-label="Voltar ao início"
             >
 
                 <span class="brand-logo">
@@ -216,7 +211,7 @@
                 type="button"
                 aria-label="Abrir menu"
                 aria-expanded="false"
-                aria-controls="main-nav"
+                aria-controls="main-navigation"
             >
 
                 <span></span>
@@ -227,8 +222,8 @@
 
 
             <nav
-                class="main-nav"
-                id="main-nav"
+                class="main-navigation"
+                id="main-navigation"
                 aria-label="Navegação principal"
             >
 
@@ -282,9 +277,9 @@
     <main>
 
 
-        <!-- ========================================
+        <!-- ==========================================
              HERO
-        ========================================= -->
+        =========================================== -->
 
         <section
             class="hero"
@@ -337,8 +332,6 @@
                     </p>
 
 
-                    <!-- TECNOLOGIAS -->
-
                     <div class="hero-tech-stack">
 
                         <span>
@@ -364,8 +357,6 @@
                     </div>
 
 
-                    <!-- DIGITAÇÃO -->
-
                     <div class="typing-wrapper">
 
                         <span>
@@ -373,7 +364,7 @@
                         </span>
 
                         <strong id="typed-text">
-                            Sistemas Web
+                            Sistema WM
                         </strong>
 
                         <span
@@ -385,8 +376,6 @@
 
                     </div>
 
-
-                    <!-- BOTÕES -->
 
                     <div class="hero-actions">
 
@@ -434,8 +423,6 @@
                     </div>
 
 
-                    <!-- LOCALIZAÇÃO -->
-
                     <div class="hero-location">
 
                         <span>
@@ -449,26 +436,27 @@
                 </div>
 
 
-                <!-- VISUAL -->
+                <!-- CARD PRINCIPAL -->
 
                 <div class="hero-visual reveal delay-1">
 
-
                     <div
-                        class="orbit orbit-1"
+                        class="orbit orbit-one"
                         aria-hidden="true"
                     ></div>
 
                     <div
-                        class="orbit orbit-2"
+                        class="orbit orbit-two"
                         aria-hidden="true"
                     ></div>
 
 
-                    <div class="developer-card">
+                    <article
+                        class="developer-card tilt-card"
+                        data-tilt="true"
+                    >
 
-
-                        <div class="developer-top">
+                        <div class="developer-card-top">
 
                             <div class="window-dots">
 
@@ -485,28 +473,24 @@
                         </div>
 
 
-                        <!-- FOTO -->
-
                         <div class="profile-area">
 
-                            <div class="profile-ring">
+                            <div class="profile-photo profile-dev">
 
-                                <span class="profile-initials">
+                                <span class="profile-fallback">
                                     WM
                                 </span>
 
                                 <img
                                     src="img/Foto%20Wilian%20Dev.png"
                                     alt="Wilian Mostaço - Desenvolvedor de Software"
-                                    id="profile-image"
+                                    id="profile-dev-image"
                                 >
 
                             </div>
 
                         </div>
 
-
-                        <!-- NOME -->
 
                         <div class="developer-name">
 
@@ -520,8 +504,6 @@
 
                         </div>
 
-
-                        <!-- TERMINAL -->
 
                         <div class="terminal">
 
@@ -592,10 +574,8 @@
 
                         </div>
 
-                    </div>
+                    </article>
 
-
-                    <!-- TAGS -->
 
                     <span class="floating-tag tag-python">
                         Python
@@ -618,17 +598,18 @@
             </div>
 
 
-            <!-- PROVAS -->
+            <!-- PROVA SOCIAL / TÉCNICA -->
 
             <div class="container hero-proof-grid">
 
-                <div class="proof-card reveal">
+                <article class="proof-card reveal">
 
                     <span class="proof-number">
                         01
                     </span>
 
                     <div>
+
                         <strong>
                             Sistemas Web
                         </strong>
@@ -636,18 +617,20 @@
                         <small>
                             Aplicações orientadas a negócio
                         </small>
+
                     </div>
 
-                </div>
+                </article>
 
 
-                <div class="proof-card reveal delay-1">
+                <article class="proof-card reveal delay-1">
 
                     <span class="proof-number">
                         02
                     </span>
 
                     <div>
+
                         <strong>
                             APIs REST
                         </strong>
@@ -655,18 +638,20 @@
                         <small>
                             Backend e integração
                         </small>
+
                     </div>
 
-                </div>
+                </article>
 
 
-                <div class="proof-card reveal delay-2">
+                <article class="proof-card reveal delay-2">
 
                     <span class="proof-number">
                         03
                     </span>
 
                     <div>
+
                         <strong>
                             Automação
                         </strong>
@@ -674,18 +659,20 @@
                         <small>
                             Processos e dados
                         </small>
+
                     </div>
 
-                </div>
+                </article>
 
 
-                <div class="proof-card reveal delay-3">
+                <article class="proof-card reveal delay-3">
 
                     <span class="proof-number">
                         04
                     </span>
 
                     <div>
+
                         <strong>
                             Visão de negócio
                         </strong>
@@ -693,18 +680,19 @@
                         <small>
                             Experiência prática em processos
                         </small>
+
                     </div>
 
-                </div>
+                </article>
 
             </div>
 
         </section>
 
 
-        <!-- ========================================
+        <!-- ==========================================
              SOBRE
-        ========================================= -->
+        =========================================== -->
 
         <section
             class="section"
@@ -731,94 +719,145 @@
 
                     <p>
 
-                        Minha transição para tecnologia nasceu da
-                        necessidade de transformar problemas de processos
-                        em soluções digitais.
+                        Minha transição para tecnologia nasceu da vontade
+                        de transformar problemas de processos em soluções
+                        digitais.
 
                     </p>
 
                 </div>
 
 
-                <div class="about-grid">
+                <div class="about-layout">
 
+
+                    <!-- FOTO SOCIAL -->
 
                     <article
-                        class="about-card about-main reveal"
+                        class="about-photo-card reveal"
+                        data-tilt="true"
                     >
 
-                        <div class="card-index">
-                            01
+                        <div class="about-photo-frame">
+
+                            <div class="about-photo-overlay"></div>
+
+                            <img
+                                src="img/Foto%20Wilian%20Social.png"
+                                alt="Wilian Mostaço - Perfil profissional"
+                                id="profile-social-image"
+                            >
+
+                            <div class="about-photo-badge">
+
+                                <span class="badge-dot"></span>
+
+                                Software Engineer
+
+                            </div>
+
                         </div>
 
-                        <h3>
-                            Engenharia de Software
-                        </h3>
 
-                        <p>
+                        <div class="about-photo-caption">
 
-                            Estudante de Engenharia de Software,
-                            desenvolvendo conhecimentos em programação,
-                            estrutura de dados, modelagem, APIs, banco de
-                            dados e desenvolvimento de aplicações.
+                            <strong>
+                                Wilian Mostaço
+                            </strong>
 
-                        </p>
+                            <span>
+                                Sistemas · Automação · Tecnologia
+                            </span>
 
-                        <p>
-
-                            Meu foco está em continuar evoluindo como
-                            desenvolvedor e construir soluções que tenham
-                            utilidade real.
-
-                        </p>
+                        </div>
 
                     </article>
 
 
-                    <article
-                        class="about-card reveal delay-1"
-                    >
+                    <!-- CARDS -->
 
-                        <div class="card-index">
-                            02
-                        </div>
-
-                        <h3>
-                            Visão de processos
-                        </h3>
-
-                        <p>
-
-                            A experiência em PCP e processos operacionais
-                            me ensinou a olhar para software também pelo
-                            lado da regra de negócio, fluxo, dados e resultado.
-
-                        </p>
-
-                    </article>
+                    <div class="about-grid">
 
 
-                    <article
-                        class="about-card reveal delay-2"
-                    >
+                        <article
+                            class="about-card about-main reveal delay-1"
+                        >
 
-                        <div class="card-index">
-                            03
-                        </div>
+                            <span class="card-index">
+                                01
+                            </span>
 
-                        <h3>
-                            Objetivo profissional
-                        </h3>
+                            <h3>
+                                Engenharia de Software
+                            </h3>
 
-                        <p>
+                            <p>
 
-                            Atuar no desenvolvimento de software,
-                            contribuindo em projetos web, APIs, sistemas
-                            corporativos e produtos digitais.
+                                Estudante de Engenharia de Software,
+                                construindo conhecimentos em programação,
+                                modelagem, APIs, banco de dados,
+                                desenvolvimento web e arquitetura.
 
-                        </p>
+                            </p>
 
-                    </article>
+                            <p>
+
+                                Meu foco é evoluir tecnicamente e criar
+                                software que tenha utilidade real para
+                                pessoas e empresas.
+
+                            </p>
+
+                        </article>
+
+
+                        <article
+                            class="about-card reveal delay-2"
+                        >
+
+                            <span class="card-index">
+                                02
+                            </span>
+
+                            <h3>
+                                Visão de processos
+                            </h3>
+
+                            <p>
+
+                                A experiência com PCP, logística e rotinas
+                                operacionais me ensinou a olhar para o
+                                software pelo lado da regra de negócio,
+                                fluxo, dados e resultado.
+
+                            </p>
+
+                        </article>
+
+
+                        <article
+                            class="about-card reveal delay-3"
+                        >
+
+                            <span class="card-index">
+                                03
+                            </span>
+
+                            <h3>
+                                Objetivo profissional
+                            </h3>
+
+                            <p>
+
+                                Atuar no desenvolvimento de software,
+                                contribuindo em projetos web, APIs,
+                                sistemas corporativos e produtos digitais.
+
+                            </p>
+
+                        </article>
+
+                    </div>
 
                 </div>
 
@@ -827,9 +866,9 @@
         </section>
 
 
-        <!-- ========================================
+        <!-- ==========================================
              PROJETOS
-        ========================================= -->
+        =========================================== -->
 
         <section
             class="section section-dark"
@@ -856,30 +895,26 @@
 
                     <p>
 
-                        Projetos autorais e estudos práticos que demonstram
-                        desenvolvimento, integração, interface e visão de produto.
+                        Projetos autorais e estudos práticos que mostram
+                        desenvolvimento, integração, interface e visão
+                        de produto.
 
                     </p>
 
                 </div>
 
 
-                <!-- =================================
-                     PROJETO PRINCIPAL
-                ================================== -->
+                <!-- SISTEMA WM -->
 
                 <article
                     class="featured-project reveal"
                 >
 
 
-                    <!-- PREVIEW -->
-
                     <div class="featured-preview">
 
 
                         <div class="browser-window">
-
 
                             <div class="browser-bar">
 
@@ -892,7 +927,7 @@
                                 </div>
 
                                 <div class="browser-address">
-                                    sistem-wm
+                                    sistema-wm
                                 </div>
 
                             </div>
@@ -1013,16 +1048,16 @@
 
                                         <div class="chart-bars">
 
-                                            <span style="height: 38%;"></span>
-                                            <span style="height: 51%;"></span>
-                                            <span style="height: 47%;"></span>
-                                            <span style="height: 64%;"></span>
-                                            <span style="height: 58%;"></span>
-                                            <span style="height: 76%;"></span>
-                                            <span style="height: 69%;"></span>
-                                            <span style="height: 87%;"></span>
-                                            <span style="height: 80%;"></span>
-                                            <span style="height: 95%;"></span>
+                                            <span style="height: 34%;"></span>
+                                            <span style="height: 49%;"></span>
+                                            <span style="height: 43%;"></span>
+                                            <span style="height: 61%;"></span>
+                                            <span style="height: 57%;"></span>
+                                            <span style="height: 74%;"></span>
+                                            <span style="height: 68%;"></span>
+                                            <span style="height: 85%;"></span>
+                                            <span style="height: 78%;"></span>
+                                            <span style="height: 94%;"></span>
 
                                         </div>
 
@@ -1036,8 +1071,6 @@
 
                     </div>
 
-
-                    <!-- CONTEÚDO -->
 
                     <div class="featured-content">
 
@@ -1155,19 +1188,15 @@
                 </article>
 
 
-                <!-- =================================
-                     PROJETOS SECUNDÁRIOS
-                ================================== -->
+                <!-- OUTROS PROJETOS -->
 
                 <div class="projects-grid">
 
 
-                    <!-- PROJETO 2 -->
-
                     <article
                         class="project-card reveal"
+                        data-tilt="true"
                     >
-
 
                         <div class="project-visual api-preview">
 
@@ -1230,9 +1259,9 @@
 
                             <p>
 
-                                Aplicação voltada ao controle e
-                                acompanhamento de produção, com separação
-                                entre frontend e backend e autenticação.
+                                Aplicação voltada ao controle e acompanhamento
+                                de produção, com separação entre frontend
+                                e backend e autenticação.
 
                             </p>
 
@@ -1278,12 +1307,10 @@
                     </article>
 
 
-                    <!-- PROJETO 3 -->
-
                     <article
                         class="project-card reveal delay-1"
+                        data-tilt="true"
                     >
-
 
                         <div class="project-visual frontend-preview">
 
@@ -1353,9 +1380,9 @@
 
                             <p>
 
-                                Interface web voltada à consulta de
-                                produção, filtros dinâmicos e visualização
-                                de informações operacionais.
+                                Interface web dedicada ao projeto de
+                                produção, com foco em organização de
+                                informações e visualização operacional.
 
                             </p>
 
@@ -1375,7 +1402,7 @@
                                 </span>
 
                                 <span>
-                                    Responsividade
+                                    Web
                                 </span>
 
                             </div>
@@ -1407,7 +1434,6 @@
 
                 <div class="github-cta reveal">
 
-
                     <div class="github-cta-info">
 
                         <span class="github-icon">
@@ -1417,11 +1443,11 @@
                         <div>
 
                             <strong>
-                                Mais código no GitHub
+                                Explore mais código no GitHub
                             </strong>
 
                             <small>
-                                14 repositórios públicos e evolução contínua.
+                                Repositórios, estudos e evolução contínua.
                             </small>
 
                         </div>
@@ -1451,9 +1477,9 @@
         </section>
 
 
-        <!-- ========================================
+        <!-- ==========================================
              JORNADA
-        ========================================= -->
+        =========================================== -->
 
         <section
             class="section"
@@ -1481,7 +1507,8 @@
                     <p>
 
                         Experiência profissional, formação e projetos
-                        caminhando na mesma direção: desenvolvimento de software.
+                        caminhando na mesma direção: desenvolvimento
+                        de software.
 
                     </p>
 
@@ -1538,9 +1565,9 @@
 
                             <p>
 
-                                Início da formação formal em Engenharia de
-                                Software, aprofundando algoritmos,
-                                programação, modelagem e desenvolvimento.
+                                Início da formação em Engenharia de Software,
+                                aprofundando algoritmos, programação,
+                                modelagem e desenvolvimento.
 
                             </p>
 
@@ -1567,9 +1594,8 @@
 
                             <p>
 
-                                Construção de projetos com Python,
-                                FastAPI, Flask, JavaScript, Node.js e
-                                banco de dados.
+                                Construção de projetos com Python, FastAPI,
+                                Flask, JavaScript, Node.js e banco de dados.
 
                             </p>
 
@@ -1613,9 +1639,9 @@
         </section>
 
 
-        <!-- ========================================
+        <!-- ==========================================
              SKILLS
-        ========================================= -->
+        =========================================== -->
 
         <section
             class="section section-dark"
@@ -1642,9 +1668,8 @@
 
                     <p>
 
-                        Sem percentuais artificiais. Abaixo estão as
-                        tecnologias que estudo, utilizo em projetos e
-                        continuo aprofundando.
+                        Tecnologias usadas em projetos, estudos e
+                        desenvolvimento contínuo.
 
                     </p>
 
@@ -1665,7 +1690,7 @@
                         </h3>
 
                         <p>
-                            Linguagens e base para construção de aplicações.
+                            Linguagens e fundamentos para construção de aplicações.
                         </p>
 
                         <div class="skill-tags">
@@ -1719,7 +1744,7 @@
                         </h3>
 
                         <p>
-                            Persistência, consultas e modelagem de dados.
+                            Persistência, consultas e modelagem.
                         </p>
 
                         <div class="skill-tags">
@@ -1746,7 +1771,7 @@
                         </h3>
 
                         <p>
-                            Ferramentas usadas no desenvolvimento e estudo.
+                            Ferramentas usadas no desenvolvimento.
                         </p>
 
                         <div class="skill-tags">
@@ -1763,8 +1788,6 @@
 
                 </div>
 
-
-                <!-- STACK VISUAL -->
 
                 <div class="stack-strip reveal">
 
@@ -1793,9 +1816,9 @@
         </section>
 
 
-        <!-- ========================================
+        <!-- ==========================================
              CONTATO
-        ========================================= -->
+        =========================================== -->
 
         <section
             class="section contact-section"
@@ -1978,9 +2001,9 @@
     </main>
 
 
-    <!-- ========================================
+    <!-- ==========================================
          FOOTER
-    ========================================= -->
+    =========================================== -->
 
     <footer class="footer">
 
@@ -1993,7 +2016,7 @@
                 </span>
 
                 <span>
-                    © <span id="year"></span>
+                    © <span id="current-year"></span>
                     Wilian Mostaço
                 </span>
 
@@ -2009,19 +2032,15 @@
     </footer>
 
 
-    <!-- VOLTAR AO TOPO -->
-
     <button
         class="back-to-top"
         id="back-to-top"
-        aria-label="Voltar ao topo"
         type="button"
+        aria-label="Voltar ao topo"
     >
         ↑
     </button>
 
-
-    <!-- JAVASCRIPT -->
 
     <script
         src="script.js"
